@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Incidencias"
+    }
+  },
+  "defaultProject": "Incidencias",
+  "cli": {
+    "analytics": false
+  }
 }
