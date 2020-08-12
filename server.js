@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/incidencias'));
 
 app.get('*', function(req, res) {
     // Replace the '/dist/<to_your_project_name>/index.html'
-    res.sendFile(path.join(__dirname + '/incidencias/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/incidencias/index.html'));
 });
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
