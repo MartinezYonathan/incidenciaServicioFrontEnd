@@ -1,0 +1,35 @@
+<div>
+    <div class="contenedor">
+        <div class="contenido-login" *ngIf="!isSuccessful">
+            <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <img src="../../../../../assets/img/logoNewPass.png" alt="ResetPass">
+                <h2>Nuevo Password</h2>
+                <div>
+                    <div class="input-div nit">
+                        <div class="i">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div class="div">
+                            <input type="newPassword" class="form-control" name="newPassword" [(ngModel)]="form.newPassword" required #newPassword="ngModel" class="input" placeholder="Password" />
+                        </div>
+                        <input id="informacion" type="email" class="form-control" name="email" [(ngModel)]="form.email" #email="ngModel" />
+                    </div>
+                    <div class="alert-danger" *ngIf="f.submitted && email.invalid">
+                        <div *ngIf="email.errors.required">Email is required</div>
+                        <div *ngIf="email.errors.email">
+                            Email must be a valid email address
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" class="btn" value="Reset Password">
+                <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                    Signup failed!<br />{{ errorMessage }}
+                </div>
+            </form>
+        </div>
+        <div class="alert alert-success" *ngIf="isSuccessful">
+            mail sent successful!
+        </div>
+    </div>
+
+</div>
