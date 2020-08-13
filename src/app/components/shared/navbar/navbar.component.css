@@ -20,12 +20,6 @@ body {
     background: #a12020;
 }
 
-@media screen and (max-width: 768px) {
-    #fh5co-header {
-        padding-top: .1em;
-    }
-}
-
 #fh5co-header #fh5co-logo {
     float: left;
     position: relative;
@@ -50,3 +44,42 @@ body {
     -ms-border-radius: 100px;
     border-radius: 100px;
 }
+
+
+/*responsive para tablets y celulares*/
+
+
+/*tablets*/
+
+@media screen and (max-width: 1050px) {}
+
+
+/*tablet mas pequena*/
+
+@media screen and (max-width: 1000px) {}
+
+
+/*celulares*/
+
+@media screen and (max-width: 900px) {
+    #fh5co-header #fh5co-logo {
+        float: left;
+        position: relative;
+        z-index: 102;
+        display: block;
+        content: url("../../../../assets/img/logoMovil.jpg");
+    }
+}
+
+
+/* float: left;
+position: relative;
+z-index: 102;
+display: block;
+width: 153px;
+height: 51px;
+box-sizing: border-box;
+display: block;
+background: url("../../../../assets/img/logoMovil.jpg");
+content: url("http://path/to/imagen.jpg");
+overflow: hidden; */

@@ -32,14 +32,14 @@
     }
     
     .welcome {
-        background: #fffdd3;
+        background: #a12121;
         overflow: hidden;
     }
     
     .welcome .splash {
         height: 0px;
         padding: 0px;
-        border: 130em solid #a12121;
+        border: 130em solid #fffdd3;
         position: fixed;
         left: 50%;
         top: 100%;
@@ -52,7 +52,7 @@
     }
     
     .welcome #welcome {
-        background: #fffdd3;
+        background: #a12121;
         width: 56px;
         height: 56px;
         position: absolute;
@@ -121,7 +121,7 @@
     
     @keyframes moveUp {
         0% {
-            background: #fffdd3;
+            background: #a12121;
             top: 100%;
         }
         50% {
@@ -138,11 +138,11 @@
             background: #a12121;
         }
         50% {
-            background: #a12121;
+            background: #fffdd3;
             top: 26px;
         }
         100% {
-            background: #fffdd3;
+            background: #a12121;
             width: 100%;
             height: 164px;
             border-radius: 0px;
