@@ -12,7 +12,7 @@
     justify-content: flex-end;
     align-items: center;
     border-radius: 50%;
-    background-image: -moz-radial-gradient(#0f0, #06f);
+    background-image: radial-gradient(#fff 40%, #FFFDD3, #FFFDD3);
     background-image: radial-gradient(#fff 40%, #FFFDD3, #FFFDD3);
 }
 

@@ -1,0 +1,9 @@
+.nad {
+    opacity: 0;
+    animation: moveIn 2s 3.1s ease forwards;
+}
+
+.bod {
+    opacity: 0;
+    animation: moveIn 2s 3.1s ease forwards;
+}
