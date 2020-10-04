@@ -1,0 +1,72 @@
+<div>
+    <div class="contenedor">
+        <div class="contenido-login" *ngIf="!isSuccessful">
+            <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <h2>Registro</h2>
+                <h3>{{tipoIncidencia}}</h3>
+                <div>
+                    <div class="input-div nit">
+                        <div class="i">
+                            <i class="fas fa-font"></i>
+                        </div>
+                        <div class="div">
+                            <input type="text" class="form-control" name="titulo" [(ngModel)]="form.titulo" required
+                                #titulo="ngModel" class="input" placeholder="titulo" />
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="f.submitted && titulo.invalid">
+                        titulo es requerido!
+                    </div>
+                </div>
+                <div>
+                    <div class="input-div nit">
+                        <div class="i">
+                            <i class="fas fa-audio-description"></i>
+                        </div>
+                        <textarea class="form-control" name="descripcion" [(ngModel)]="form.descripcion" required
+                            #descripcion="ngModel" placeholder="descripcion" rows="4" cols="100"></textarea>
+
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="f.submitted && descripcion.invalid">
+                        descripcion es requerido!
+                    </div>
+                </div>
+                <div>
+                    <h5>Fecha y hora de incidencia. </h5>
+                    <div class="input-div nit">
+                        <div class="i">
+                            <i class="far fa-calendar-minus"></i>
+                        </div>
+                        <div class="div">
+                            <input type="datetime-local" class="form-control" name="dateInicio"
+                                [(ngModel)]="form.dateInicio" required #dateInicio="ngModel" class="input"
+                                placeholder="descripcion" required>
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="f.submitted && dateInicio.invalid">
+                        fecha de Inicio es requerido!
+                    </div>
+                </div>
+
+                <div>
+                    <h5>Lugar de incidencia. </h5>
+                    <app-map lat="19.312155871512488" lon="-99.05758380889891" zoom="17" width="100%" height="500px"
+                        addMarker="true">
+                        <app-opciones control="FullScreen"></app-opciones>
+                        <app-opciones control="ScaleLine"></app-opciones>
+                        <app-opciones control="Zoom"></app-opciones>
+                    </app-map>
+                </div>
+
+                <button class="btn btn-primary btn-block">Enviar Registro</button>
+
+                <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                    Signup failed!<br />{{ errorMessage }}
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="alert alert-success" *ngIf="isSuccessful">
+        Your registration is successful!
+    </div>
+</div>

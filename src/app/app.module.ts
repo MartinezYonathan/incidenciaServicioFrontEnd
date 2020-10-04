@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './helpers/auth.interceptor';
 
 //Servicios
 
@@ -26,6 +27,14 @@ import { PreRegistroComponent } from './components/usuario/registro/preRegistro/
 import { ActiRegistroComponent } from './components/usuario/registro/actiRegistro/acti-registro/acti-registro.component';
 import { ProfileComponent } from './components/usuario/profile/profile/profile.component';
 
+//Incidencias
+import { AddTipoComponent } from './components/incidencias/tipoIncidencia/add-tipo/add-tipo.component';
+import { RegistroIncidenciaComponent } from './components/incidencias/registro/registro-incidencia/registro-incidencia.component';
+import { IncidenciaComponent } from './components/incidencias/ver/incidencia/incidencia.component';
+import { MapComponent } from './components/map/map/map.component';
+import { MarkerComponent } from './components/map/marker/marker.component';
+import { OpcionesComponent } from './components/map/opciones/opciones.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +48,13 @@ import { ProfileComponent } from './components/usuario/profile/profile/profile.c
     ResetComponent,
     PreRegistroComponent,
     ActiRegistroComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddTipoComponent,
+    RegistroIncidenciaComponent,
+    IncidenciaComponent,
+    MapComponent,
+    MarkerComponent,
+    OpcionesComponent
   ],
   imports: [
     BrowserModule,
@@ -47,8 +62,11 @@ import { ProfileComponent } from './components/usuario/profile/profile/profile.c
     FormsModule,
     HttpClientModule
   ],
-  providers: [
-  ],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

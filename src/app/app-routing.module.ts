@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './helpers/auth.guard';
 ///Components
 import { HomeComponent } from "./components/home/home.component";
 import { AboutComponent } from "./components/about/about.component";
@@ -17,6 +18,11 @@ import { PreRegistroComponent } from './components/usuario/registro/preRegistro/
 import { ActiRegistroComponent } from './components/usuario/registro/actiRegistro/acti-registro/acti-registro.component';
 import { ProfileComponent } from './components/usuario/profile/profile/profile.component';
 
+//Incidencias
+import { AddTipoComponent } from './components/incidencias/tipoIncidencia/add-tipo/add-tipo.component';
+import { RegistroIncidenciaComponent } from './components/incidencias/registro/registro-incidencia/registro-incidencia.component';
+
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -28,6 +34,8 @@ const routes: Routes = [
   { path: 'incidencias', component: IncidenciasComponent },
   { path: 'estadisticas', component: EstadisticasComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'incidencias/tipo', component: AddTipoComponent, canActivate: [AuthGuard]  },
+  { path: 'incidencias/registro', component: RegistroIncidenciaComponent, canActivate: [AuthGuard]  },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

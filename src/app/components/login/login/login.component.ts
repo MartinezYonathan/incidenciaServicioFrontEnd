@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-login',
@@ -17,20 +19,25 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private authService: AuthService, 
+    private tokenStorage: TokenStorageService,
+    private router: Router) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
-      this.roles = this.tokenStorage.getUser().roles;
+      this.roles = this.tokenStorage.getRoles();
+      this.router.navigateByUrl('home');
     }
   }
 
   onSubmit(): void {
     this.authService.login(this.form).subscribe(
       data => {
-        this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data);
+        Swal.fire('inicio de sesion: ' + data.username)
+        this.tokenStorage.saveToken(data.authenticationToken);
+        this.tokenStorage.saveUser(data.username);
+        this.tokenStorage.saveRoles(data.roles);
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
@@ -38,7 +45,11 @@ export class LoginComponent implements OnInit {
         this.reloadPage();
       },
       err => {
-        this.errorMessage = err.error.message;
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: err.error.message + ", revisa tu contraseña o usuario",
+        })
         this.isLoginFailed = true;
       }
     );

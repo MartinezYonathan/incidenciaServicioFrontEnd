@@ -1,1 +1,16 @@
-<p>estadisticas works!</p>
+<div class="contenedor">
+
+  <h3 style="text-align:center;">Mapa de incidencias registradas</h3>
+
+  <div>
+    <app-map lat="19.312155871512488" lon="-99.05758380889891" zoom="17" width="100%" height="500px">
+      <div *ngFor="let ubicacion of ubicaciones">
+        <app-marker lat={{ubicacion.latitud}} lon={{ubicacion.longitud}}></app-marker>
+      </div>
+      <app-opciones control="FullScreen"></app-opciones>
+      <app-opciones control="ScaleLine"></app-opciones>
+      <app-opciones control="Zoom"></app-opciones>
+    </app-map>
+
+  </div>
+</div>

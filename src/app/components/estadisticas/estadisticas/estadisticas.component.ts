@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, ElementRef } from '@angular/core';
+import { PublicService } from 'src/app/services/public.service';
 
 @Component({
   selector: 'app-estadisticas',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./estadisticas.component.css']
 })
 export class EstadisticasComponent implements OnInit {
+  ubicaciones: any[];
+  ubicacionesLength: number;
+  constructor(private publicService: PublicService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.publicService.getUbicacionIncidencias().subscribe(data => {
+      this.ubicaciones = data;
+      this.ubicacionesLength = data.length;
+      console.log(this.ubicaciones );
+      
+    });
   }
-
 }

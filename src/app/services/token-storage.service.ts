@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user';
+const ROLES_KEY = 'auth-roles';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,20 @@ export class TokenStorageService {
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
   }
 
+  public saveRoles(user): void {
+    window.sessionStorage.removeItem(ROLES_KEY);
+    window.sessionStorage.setItem(ROLES_KEY, JSON.stringify(user));
+  }
+
   public getUser(): any {
     return JSON.parse(sessionStorage.getItem(USER_KEY));
+  }
+
+  public getRoles(): any {
+    return JSON.parse(sessionStorage.getItem(ROLES_KEY));
+  }
+
+  isLoggedIn(): boolean {
+    return this.getToken() != null;
   }
 }

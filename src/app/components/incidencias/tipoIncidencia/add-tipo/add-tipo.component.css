@@ -1,0 +1,110 @@
+
+.container{
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0;
+  }
+  
+  div{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .c2{
+    display: inline-block;
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding: 7% 0;
+    margin: 0px;
+    background-color: #8fbbd9;
+    
+  }
+  
+  .c3{
+    display: inline-block;
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding: 7% 0;
+    background-color: #7ed9a7;  
+  }
+   
+  @media only screen and (max-width: 660px){
+
+  }
+
+  
+/*responsive para tablets y celulares*/
+
+
+/*tablets*/
+
+@media screen and (max-width: 1050px) {
+
+    .c2{
+        display: inline-block;
+        float: left;
+        width: 50%;
+        text-align: center;
+        padding: 10% 0;
+        margin: 0px;
+        background-color: #8fbbd9;
+        
+      }
+      
+      .c3{
+        display: inline-block;
+        float: left;
+        width: 50%;
+        text-align: center;
+        padding: 10% 0;
+        background-color: #7ed9a7;  
+      }
+}
+
+
+/*celulares*/
+
+@media screen and (max-width: 900px) {
+    .c2{
+        display: inline-block;
+        float: left;
+        width: 50%;
+        text-align: center;
+        padding: 15% 0;
+        margin: 0px;
+        background-color: #8fbbd9;
+        
+      }
+      
+      .c3{
+        display: inline-block;
+        float: left;
+        width: 50%;
+        text-align: center;
+        padding: 15% 0;
+        background-color: #7ed9a7;  
+      }
+}
+
+@media only screen and (max-width: 660px){
+    .c2{
+        display: inline-block;
+        float: left;
+        width: 50%;
+        text-align: center;
+        padding: 22.5% 0;
+        margin: 0px;
+        background-color: #8fbbd9;
+        
+      }
+      
+      .c3{
+        display: inline-block;
+        float: left;
+        width: 50%;
+        text-align: center;
+        padding: 22.5% 0;
+        background-color: #7ed9a7;  
+      }}
