@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment.prod';
 
-const AUTH_API_PRODUC = 'http://localhost:8080/api/auth/';
-const AUTH_API = 'https://incidencias-servicio-backend.herokuapp.com/api/auth/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -13,32 +12,32 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
-
+  AUTH_API = environment.apiUrl;
   constructor(private http: HttpClient) { }
 
   login(credentials): Observable<any> {
-    return this.http.post(AUTH_API + 'login', {
+    return this.http.post(this.AUTH_API + 'auth/login', {
       username: credentials.username,
       password: credentials.password
     }, httpOptions);
   }
 
   ressetpass(credentials): Observable<any> {
-    return this.http.post(AUTH_API + 'resetpass', {
+    return this.http.post(this.AUTH_API + 'auth/resetpass', {
       email: credentials.email,
       newPassword: null
     }, httpOptions);
   }
 
   newpass(credentials): Observable<any> {
-    return this.http.post(AUTH_API + 'reset', {
+    return this.http.post(this.AUTH_API + 'auth/reset', {
       email: credentials.email,
       newPassword: credentials.newPassword
     }, httpOptions);
   }
 
   register(user): Observable<any> {
-    return this.http.post(AUTH_API + 'signup', {
+    return this.http.post(this.AUTH_API + 'auth/signup', {
       username: null,
       email: user.email,
       password: null,

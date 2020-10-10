@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: false,
+  apiUrl: 'https://incidencias-servicio-backend.herokuapp.com/api/'
+  //apiUrl: 'http://localhost:8080/api/'
 };

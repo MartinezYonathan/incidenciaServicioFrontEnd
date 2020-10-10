@@ -31,6 +31,10 @@ import { ProfileComponent } from './components/usuario/profile/profile/profile.c
 import { AddTipoComponent } from './components/incidencias/tipoIncidencia/add-tipo/add-tipo.component';
 import { RegistroIncidenciaComponent } from './components/incidencias/registro/registro-incidencia/registro-incidencia.component';
 import { IncidenciaComponent } from './components/incidencias/ver/incidencia/incidencia.component';
+import { ComentarioComponent } from './components/incidencias/comentario/comentario/comentario.component';
+import { IncidenciCompletaComponent } from './components/incidencias/ver/incidenci-completa/incidenci-completa.component';
+
+//mapas
 import { MapComponent } from './components/map/map/map.component';
 import { MarkerComponent } from './components/map/marker/marker.component';
 import { OpcionesComponent } from './components/map/opciones/opciones.component';
@@ -54,7 +58,9 @@ import { OpcionesComponent } from './components/map/opciones/opciones.component'
     IncidenciaComponent,
     MapComponent,
     MarkerComponent,
-    OpcionesComponent
+    OpcionesComponent,
+    ComentarioComponent,
+    IncidenciCompletaComponent
   ],
   imports: [
     BrowserModule,

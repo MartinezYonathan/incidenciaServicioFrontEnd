@@ -28,28 +28,61 @@ export class RegistroIncidenciaComponent implements OnInit {
   onSubmit(): void {
 
     this.form.latitud = this.getLatitud();
-    this.form.longitud =this.getLongitud();
+    this.form.longitud = this.getLongitud();
     this.form.nivelRiesgo = "Alto";
     this.form.tipoAlarma = "WEB";
     this.form.tipoIncidencia = this.getTIpoIncidencia();
-    this.incidenciaService.register(this.form).subscribe(
-      data => {
-        console.log(data);
-        Swal.fire(
-          'Incidencia registrada!'
-        )
-        this.router.navigateByUrl('profile');
-      },
-      err => {
+
+    Swal.fire({
+      title: '¿Quieres que sea publica tu incidencia?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: `SI`,
+      denyButtonText: `NO`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        this.incidenciaService.register(this.form,true).subscribe(
+          data => {
+
+          },
+          err => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: err.error.message + ", No se pudo registrar tu incidencia",
+            })
+          }
+        );
         Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: err.error.message + ", No se pudo registrar tu incidencia",
+          icon: 'success',
+          title: 'Tu incidencia sera publica pero no se publicara tus datos!',
+          showConfirmButton: false,
+          timer: 8000
         })
+        this.router.navigateByUrl('profile');
+      } else if (result.isDenied) {
+        this.incidenciaService.register(this.form,false).subscribe(
+          data => {
 
+          },
+          err => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: err.error.message + ", No se pudo registrar tu incidencia",
+            })
+          }
+        );
+        Swal.fire({
+          icon: 'success',
+          title: 'No se publicara tu incidencia y sera privada!',
+          showConfirmButton: false,
+          timer: 8000
+        })
+        this.router.navigateByUrl('profile');
       }
-    );
-
+    })
   }
 
   public getTIpoIncidencia(): any {

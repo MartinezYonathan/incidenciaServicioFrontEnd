@@ -21,6 +21,7 @@ import { ProfileComponent } from './components/usuario/profile/profile/profile.c
 //Incidencias
 import { AddTipoComponent } from './components/incidencias/tipoIncidencia/add-tipo/add-tipo.component';
 import { RegistroIncidenciaComponent } from './components/incidencias/registro/registro-incidencia/registro-incidencia.component';
+import { IncidenciCompletaComponent } from './components/incidencias/ver/incidenci-completa/incidenci-completa.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'newpass', component: NewComponent },
   { path: 'login/reset', component: ResetComponent },
   { path: 'incidencias', component: IncidenciasComponent },
+  { path: 'incidencia', component: IncidenciCompletaComponent },
   { path: 'estadisticas', component: EstadisticasComponent },
   { path: 'about', component: AboutComponent },
   { path: 'incidencias/tipo', component: AddTipoComponent, canActivate: [AuthGuard]  },

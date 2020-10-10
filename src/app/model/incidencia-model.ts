@@ -8,5 +8,8 @@ export class Incidencia {
     descripcion: string;
     tipoAlarma: string;
     nivelRiesgo: string;
+    dateInicio: string;
+    dateTermino: string;
+    publica:boolean;
     dateCreacion: string;
 }
