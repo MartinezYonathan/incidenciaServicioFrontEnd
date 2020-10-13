@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { throwError } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import Swal from 'sweetalert2'
@@ -45,10 +46,12 @@ export class LoginComponent implements OnInit {
         this.reloadPage();
       },
       err => {
+        throwError(err);
+        
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: err.error.message + ", revisa tu contraseña o usuario",
+          text: "revisa tu contraseña o usuario",
         })
         this.isLoginFailed = true;
       }
