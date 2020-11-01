@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { FooterComponent } from './components/shared/footer/footer.component';
 
 //Servicios
 
@@ -38,7 +39,6 @@ import { IncidenciCompletaComponent } from './components/incidencias/ver/inciden
 import { MapComponent } from './components/map/map/map.component';
 import { MarkerComponent } from './components/map/marker/marker.component';
 import { OpcionesComponent } from './components/map/opciones/opciones.component';
-import { FooterComponent } from './components/shared/footer/footer.component';
 
 @NgModule({
   declarations: [
