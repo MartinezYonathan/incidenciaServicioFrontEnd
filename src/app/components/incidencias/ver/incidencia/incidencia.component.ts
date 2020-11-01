@@ -6,11 +6,13 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 @Component({
   selector: 'app-incidencia',
   templateUrl: './incidencia.component.html',
-  styleUrls: ['./incidencia.component.css']
+  styleUrls: ['./incidencia.component.css'],
 })
 export class IncidenciaComponent implements OnInit {
-
-  constructor(private router: Router, private tokenService: TokenStorageService) { }
+  constructor(
+    private router: Router,
+    private tokenService: TokenStorageService
+  ) {}
   @Input() incidencias: any[];
   username: string;
 
@@ -19,8 +21,13 @@ export class IncidenciaComponent implements OnInit {
   }
 
   goToIncidencia(incidencia: Incidencia): void {
-    window.localStorage.removeItem("INCIDENCIA");
-    window.localStorage.setItem("INCIDENCIA", JSON.stringify(incidencia));
+    window.localStorage.removeItem('INCIDENCIA');
+    window.localStorage.setItem('INCIDENCIA', JSON.stringify(incidencia));
     this.router.navigateByUrl('incidencia');
+  }
+
+  esMuyListo(cadena): any {
+    console.log(cadena);
+    return cadena;
   }
 }

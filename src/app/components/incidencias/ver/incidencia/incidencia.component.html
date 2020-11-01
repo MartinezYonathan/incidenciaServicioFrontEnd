@@ -1,24 +1,39 @@
-<!-- Display Posts-->
-<div class="row post" *ngFor="let incidencia of incidencias">
-    <!-- Section to Display Post Information-->
-    <div class="col-md-11">
-        <span class="subreddit-info">
-            <span class="subreddit-text"><a class="posturl">{{incidencia.tipoIncidencia}}</a></span>
-            <span> . incidencia by <a class="username">{{incidencia.username}}</a></span>
-            <span> . {{incidencia.dateCreacion}}</span>
-        </span>
-        <hr />
-        <div class="post-title">
-            <a class="postname">{{incidencia.titulo}}</a>
+<!-- content-with-photo17 -->
+<div class="w3l-index-block4">
+    <div class="features-bg py-5">
+        <!-- features15 block -->
+        <div class="container py-md-3">
+            <div class="heading text-center mx-auto">
+                <h3 class="head">Incidencias. </h3>
+                <p class="my-3 head"> </p>
+            </div>
+            <div class="row post">
+                <div class="col-md-6 features15-col-text"  *ngFor="let incidencia of incidencias">
+                    <a class="d-flex flex-wrap feature-unit align-items-center">
+                        <div class="col-sm-3">
+                            <div class="features15-info">
+                                <img src="assets/img/{{incidencia.tipoIncidencia}}.svg" class="img-fluid" alt="main image">
+                            </div>
+                        </div>
+                        <div class="col-sm-9 mt-sm-0 mt-4">
+                            <div class="features15-para">
+                                <h4>{{incidencia.titulo}}</h4>
+                                <span class="subreddit-text"><a class="posturl">{{incidencia.tipoIncidencia}}</a></span>
+                                <p>{{incidencia.dateCreacion}}.</p>
+                            </div>
+                            <a class="btnCommments" role="button">
+                                <fa-icon [icon]="faComments"></fa-icon>
+                            </a>
+                            <button class="login" (click)="goToIncidencia(incidencia)">
+                                Ver incidencia
+                            </button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <!-- features15 block -->
+            </div>
         </div>
-        <hr />
-        <span>
-            <a class="btnCommments" role="button">
-                <fa-icon [icon]="faComments"></fa-icon>
-            </a>
-            <button class="login" (click)="goToIncidencia(incidencia)">
-                Ver incidencia
-            </button>
-        </span>
     </div>
 </div>

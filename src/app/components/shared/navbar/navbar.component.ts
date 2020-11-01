@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   showAdminBoard = false;
   showModeratorBoard = false;
   username: string;
+  navbarOpen = false;
 
   constructor(private tokenStorageService: TokenStorageService) { }
 
@@ -27,6 +28,10 @@ export class NavbarComponent implements OnInit {
 
       this.username = usernameToken;
     }
+  }
+
+  setNavbarOpen() {
+    this.navbarOpen = !this.navbarOpen;
   }
 
   logout(): void {

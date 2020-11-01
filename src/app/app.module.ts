@@ -38,6 +38,7 @@ import { IncidenciCompletaComponent } from './components/incidencias/ver/inciden
 import { MapComponent } from './components/map/map/map.component';
 import { MarkerComponent } from './components/map/marker/marker.component';
 import { OpcionesComponent } from './components/map/opciones/opciones.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { OpcionesComponent } from './components/map/opciones/opciones.component'
     MarkerComponent,
     OpcionesComponent,
     ComentarioComponent,
-    IncidenciCompletaComponent
+    IncidenciCompletaComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

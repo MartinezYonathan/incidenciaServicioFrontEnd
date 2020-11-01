@@ -11,3 +11,15 @@ p {
     color: #5c4848;
     font-size: large;
 }
+
+.btnLogin{
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    /*background-image: linear-gradient(to right, #680197, #00ffbf,#c046f8);*/
+    background-color: rgb(161, 32, 32);
+
+    color: #fff;
+}
