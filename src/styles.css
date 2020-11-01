@@ -9897,7 +9897,6 @@ Author URL: http://w3layouts.com
  
  .w3l-index-block4 .feature-unit:hover {
    box-shadow: var(--card-hover-box-shadow);
-   background: #d67777;
    color: #fff;
    transition: 0.3s ease-in-out; }
  
