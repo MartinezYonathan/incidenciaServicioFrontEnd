@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { FooterComponent } from './components/shared/footer/footer.component';
 
 //Servicios
 
@@ -60,7 +61,8 @@ import { OpcionesComponent } from './components/map/opciones/opciones.component'
     MarkerComponent,
     OpcionesComponent,
     ComentarioComponent,
-    IncidenciCompletaComponent
+    IncidenciCompletaComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

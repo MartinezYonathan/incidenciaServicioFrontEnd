@@ -1,14 +1,65 @@
-<div class="container">
-    <div class="2col">
-        <div class="c2" (click)="agregarTipo('INCIDENCIA_ROBO')" >INCIDENCIA ROBO</div>
-        <div class="c3" (click)="agregarTipo('INCIDENCIA_AGRESION_LESION')">INCIDENCIA AGRESION</div>
+
+<!-- content-with-photo17 -->
+<div class="w3l-index-block4">
+    <div class="features-bg py-5">
+        <!-- features15 block -->
+        <div class="container py-md-3">
+            <div class="heading text-center mx-auto">
+                <h3 class="head">Selecciona el tipo de incidencias!</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-6 features15-col-text" style="background:#fff" (click)="agregarTipo('INCIDENCIA_ROBO')">
+                    <a [routerLink] class="d-flex flex-wrap feature-unit align-items-center" style="background: url(assets/img/INCIDENCIA_ROBO2.svg);">
+                      <div class="col-sm-9login mt-sm-0 mt-4">
+                        <div class="features15-para">
+                          <h4>INCIDENCIA ROBO</h4>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-md-6 features15-col-text" style="background:#fff" (click)="agregarTipo('INCIDENCIA_AGRESION_LESION')">
+                    <a [routerLink] class="d-flex flex-wrap feature-unit align-items-center" style="background: url(assets/img/method-draw-image.svg);">
+                      <div class="col-sm-9login mt-sm-0 mt-4">
+                        <div class="features15-para">
+                          <h4>INCIDENCIA AGRESION</h4>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-md-6 features15-col-text" style="background:#fff" (click)="agregarTipo('INCIDENCIA_ATAQUE_DE_PERROS')">
+                    <a [routerLink] class="d-flex flex-wrap feature-unit align-items-center" style="background: url(assets/img/method-draw-image.svg);">
+                      <div class="col-sm-9login mt-sm-0 mt-4">
+                        <div class="features15-para">
+                          <h4>INCIDENCIA ATAQUE</h4>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-md-6 features15-col-text" style="background:#fff" (click)="agregarTipo('INCIDENCIA_ACOSO')">
+                    <a [routerLink] class="d-flex flex-wrap feature-unit align-items-center" style="background: url(assets/img/method-draw-image.svg);">
+                      <div class="col-sm-9login mt-sm-0 mt-4">
+                        <div class="features15-para">
+                          <h4>INCIDENCIA ACOSO</h4>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+            </div>
+        </div>
     </div>
-    <div class="2col">
-        <div class="c2" (click)="agregarTipo('INCIDENCIA_ATAQUE_DE_PERROS')">INCIDENCIA ATAQUE</div>
-        <div class="c3" (click)="agregarTipo('INCIDENCIA_ACOSO')">INCIDENCIA ACOSO</div>
+    <!-- content-with-photo17 -->
+    <div class="container">
+        <div class="2col">
+            <div class="c2" (click)="agregarTipo('INCIDENCIA_ROBO')">INCIDENCIA ROBO
+            </div>
+            <div class="c3" (click)="agregarTipo('INCIDENCIA_AGRESION_LESION')">INCIDENCIA AGRESION</div>
+        </div>
+        <div class="2col">
+            <div class="c2" (click)="agregarTipo('INCIDENCIA_ATAQUE_DE_PERROS')">INCIDENCIA ATAQUE</div>
+            <div class="c3" (click)="agregarTipo('INCIDENCIA_ACOSO')">INCIDENCIA ACOSO</div>
+        </div>
+        <div class="2col">
+            <div class="c2" (click)="agregarTipo('INCIDENCIA_ALCOHOL_DROGAS')">INCIDENCIA DROGAS</div>
+            <div class="c3" (click)="agregarTipo('INCIDENCIA_OTROS')">OTROS</div>
+        </div>
     </div>
-    <div class="2col">
-        <div class="c2" (click)="agregarTipo('INCIDENCIA_ALCOHOL_DROGAS')">INCIDENCIA DROGAS</div>
-        <div class="c3" (click)="agregarTipo('INCIDENCIA_OTROS')">OTROS</div>
-    </div>
-</div>

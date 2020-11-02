@@ -1,4 +1,39 @@
+<div class="w3l-bootstrap-header fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light p-2">
+      <div class="container">
+        <a class="navbar-brand" [routerLink]="['']"><span class="fa fa-diamond"></span>Incidencias UACM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['']">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"[routerLink]="['incidencias']">Incidencias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['estadisticas']">Estadisticas</a>
+            </li>
+          </ul>
+          <div class="form-inline" *ngIf="!isLoggedIn">
+            <a  [routerLink]="['login']" class="login mr-4 btnLogin">Login</a>
+              <a [routerLink]="['registro']" class="btn btn-primary btn-theme btnRegistar">Crear Cuenta</a>
+          </div>
+          <div class="form-inline" *ngIf="isLoggedIn">
+            <a class="login mr-4" [routerLink]="['profile']">{{username}}</a>
+            <a href class="btn btn-primary btn-theme btnRegistar" (click)="logout()">Salir</a>
+        </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
 <!-- Header -->
+<!-- 
 <div id="fh5co-header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -46,3 +81,5 @@
     </div>
 
 </div>
+
+-->

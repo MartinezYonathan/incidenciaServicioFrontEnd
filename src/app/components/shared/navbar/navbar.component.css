@@ -1,72 +1,21 @@
-/*
-//////////////////////////////////////////////////////
 
-FREE HTML5 TEMPLATE 
-DESIGNED & DEVELOPED by FREEHTML5.CO
+.btnRegistar{
 
-//////////////////////////////////////////////////////
-*/
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    /*background-image: linear-gradient(to right, #680197, #00ffbf,#c046f8);*/
+    background-color: rgb(161, 32, 32);
 
-body {
-    font-family: "PT Mono", sans-serif;
-    font-size: 16px;
-    line-height: 26px;
-    color: #7b7b7b;
-    font-weight: 300;
-    letter-spacing: .05em;
+    color: #fff;
 }
 
-#fh5co-header {
-    background: #a12020;
-}
+.btnLogin{
 
-#fh5co-header #fh5co-logo {
-    float: left;
-    position: relative;
-    z-index: 102;
-    display: block;
-}
+    border-radius: 10px;
+    outline: none;
+    border: 2px;
+    
 
-.btn-cta {
-    color: rgb(0, 0, 0);
-    background: rgb(255, 255, 255);
-    margin-right: 1em;
-    padding: 4px 10px;
-    display: -moz-inline-stack;
-    display: inline-block;
-    zoom: 1;
-    *display: inline;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    -ms-border-radius: 100px;
-    border-radius: 100px;
-}
-
-
-/*responsive para tablets y celulares*/
-
-
-/*tablets*/
-
-@media screen and (max-width: 1050px) {}
-
-
-/*tablet mas pequena*/
-
-@media screen and (max-width: 1000px) {}
-
-
-/*celulares*/
-
-@media screen and (max-width: 900px) {
-    #fh5co-header #fh5co-logo {
-        float: left;
-        position: relative;
-        z-index: 102;
-        display: block;
-        content: url("../../../../assets/img/logoMovil.jpg");
-    }
+    color: #fff;
 }

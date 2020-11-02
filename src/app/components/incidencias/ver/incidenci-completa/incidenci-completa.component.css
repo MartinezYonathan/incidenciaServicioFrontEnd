@@ -4,6 +4,18 @@
   opacity: 1;
 }
 
+.btnLogin{
+  display: block;
+  width: 100%;
+  bmovetoporder-radius: 10px;
+  outline: none;
+  border: none;
+  /*background-image: linear-gradient(to right, #680197, #00ffbf,#c046f8);*/
+  background-color: rgb(161, 32, 32);
+
+  color: #fff;
+}
+
 .pos {
   background-color: transparent;
   border-color: #a12121;
