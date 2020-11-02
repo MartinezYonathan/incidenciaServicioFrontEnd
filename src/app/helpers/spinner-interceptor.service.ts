@@ -12,6 +12,7 @@ export class SpinnerInterceptorService implements HttpInterceptor  {
   constructor(private spinner:SpinnerService) { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.spinner.llamarSpinner();
+    console.log("Entro a spinner");
     return next.handle(req).pipe(
       finalize(() => this.spinner.detenerSpinner())
     );

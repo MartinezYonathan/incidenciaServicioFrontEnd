@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { SpinnerInterceptorService } from './spinner-interceptor.service';
 
 describe('SpinnerInterceptorService', () => {

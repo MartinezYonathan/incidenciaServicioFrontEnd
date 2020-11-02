@@ -1,9 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { SpinnerInterceptorService } from './helpers/spinner-interceptor.service';
 
 //Servicios
 
@@ -66,13 +69,19 @@ import { OpcionesComponent } from './components/map/opciones/opciones.component'
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
+    multi: true
+  },{
+    provide: HTTP_INTERCEPTORS,
+    useClass: SpinnerInterceptorService,
     multi: true
   }],
   bootstrap: [AppComponent]

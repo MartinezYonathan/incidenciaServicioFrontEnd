@@ -8,11 +8,13 @@
                 <p class="my-3 head"> </p>
             </div>
             <div class="row post">
-                <div class="col-md-6 features15-col-text"  style="margin-top: 25px;" *ngFor="let incidencia of incidencias">
-                    <a class="d-flex flex-wrap feature-unit align-items-center" >
+                <div class="col-md-6 features15-col-text" style="margin-top: 25px;"
+                    *ngFor="let incidencia of incidencias">
+                    <a class="d-flex flex-wrap feature-unit align-items-center">
                         <div class="col-sm-3">
                             <div class="features15-info">
-                                <img src="assets/img/{{incidencia.tipoIncidencia}}.svg" class="img-fluid" alt="main image">
+                                <img src="assets/img/{{incidencia.tipoIncidencia}}.svg" class="img-fluid"
+                                    alt="main image">
                             </div>
                         </div>
                         <div class="col-sm-9 mt-sm-0 mt-4">
@@ -37,3 +39,7 @@
         </div>
     </div>
 </div>
+
+<ngx-spinner bdColor="rgba(161,32,32,0.8)" size="medium" color="#fff" type="square-jelly-box">
+    <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
