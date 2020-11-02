@@ -11,10 +11,6 @@ export class AppComponent implements OnInit {
 
   public ngOnInit()
   { 
-    $(function () {
-      $('.navbar-toggler').click(function () {
-        $('body').toggleClass('noscroll');
-      })
-    });
+
   }
 }
