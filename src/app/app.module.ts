@@ -45,6 +45,7 @@ import { OpcionesComponent } from './components/map/opciones/opciones.component'
 import { EvidenciaComponent } from './components/incidencias/evidencia/evidencia.component';
 import { IncidenciCompletaPublicaComponent } from './components/incidencias/ver/incidenci-completa-publica/incidenci-completa-publica.component';
 import { IncidenciaPublicaComponent } from './components/incidencias/ver/incidencia-publica/incidencia-publica.component';
+import { SeguimientoComponent } from './components/incidencias/seguimiento/seguimiento.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { IncidenciaPublicaComponent } from './components/incidencias/ver/inciden
     FooterComponent,
     EvidenciaComponent,
     IncidenciCompletaPublicaComponent,
-    IncidenciaPublicaComponent
+    IncidenciaPublicaComponent,
+    SeguimientoComponent
   ],
   imports: [
     BrowserModule,
