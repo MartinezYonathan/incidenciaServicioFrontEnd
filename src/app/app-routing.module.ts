@@ -22,7 +22,8 @@ import { ProfileComponent } from './components/usuario/profile/profile/profile.c
 import { AddTipoComponent } from './components/incidencias/tipoIncidencia/add-tipo/add-tipo.component';
 import { RegistroIncidenciaComponent } from './components/incidencias/registro/registro-incidencia/registro-incidencia.component';
 import { IncidenciCompletaComponent } from './components/incidencias/ver/incidenci-completa/incidenci-completa.component';
-
+import { IncidenciCompletaPublicaComponent } from './components/incidencias/ver/incidenci-completa-publica/incidenci-completa-publica.component';
+import { IncidenciaPublicaComponent } from './components/incidencias/ver/incidencia-publica/incidencia-publica.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'newpass', component: NewComponent },
   { path: 'login/reset', component: ResetComponent },
   { path: 'incidencias', component: IncidenciasComponent },
-  { path: 'incidencia', component: IncidenciCompletaComponent },
+  { path: 'incidencia', component: IncidenciCompletaPublicaComponent },
+  { path: 'miincidencia', component: IncidenciCompletaComponent },
   { path: 'estadisticas', component: EstadisticasComponent },
   { path: 'about', component: AboutComponent },
   { path: 'incidencias/tipo', component: AddTipoComponent, canActivate: [AuthGuard]  },

@@ -1,9 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { SpinnerInterceptorService } from './helpers/spinner-interceptor.service';
 
 //Servicios
 
@@ -39,6 +42,9 @@ import { IncidenciCompletaComponent } from './components/incidencias/ver/inciden
 import { MapComponent } from './components/map/map/map.component';
 import { MarkerComponent } from './components/map/marker/marker.component';
 import { OpcionesComponent } from './components/map/opciones/opciones.component';
+import { EvidenciaComponent } from './components/incidencias/evidencia/evidencia.component';
+import { IncidenciCompletaPublicaComponent } from './components/incidencias/ver/incidenci-completa-publica/incidenci-completa-publica.component';
+import { IncidenciaPublicaComponent } from './components/incidencias/ver/incidencia-publica/incidencia-publica.component';
 
 @NgModule({
   declarations: [
@@ -62,17 +68,26 @@ import { OpcionesComponent } from './components/map/opciones/opciones.component'
     OpcionesComponent,
     ComentarioComponent,
     IncidenciCompletaComponent,
-    FooterComponent
+    FooterComponent,
+    EvidenciaComponent,
+    IncidenciCompletaPublicaComponent,
+    IncidenciaPublicaComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
+    multi: true
+  },{
+    provide: HTTP_INTERCEPTORS,
+    useClass: SpinnerInterceptorService,
     multi: true
   }],
   bootstrap: [AppComponent]

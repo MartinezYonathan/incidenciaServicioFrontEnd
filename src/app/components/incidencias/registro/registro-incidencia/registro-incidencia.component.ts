@@ -56,7 +56,7 @@ export class RegistroIncidenciaComponent implements OnInit {
         );
         Swal.fire({
           icon: 'success',
-          title: 'Tu incidencia sera publica pero no se publicara tus datos!',
+          title: 'Tu incidencia sera pública pero no se publicara tus datos!',
           showConfirmButton: false,
           timer: 8000
         })

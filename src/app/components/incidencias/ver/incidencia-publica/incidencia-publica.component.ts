@@ -4,11 +4,11 @@ import { Incidencia } from 'src/app/model/incidencia-model';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
-  selector: 'app-incidencia',
-  templateUrl: './incidencia.component.html',
-  styleUrls: ['./incidencia.component.css'],
+  selector: 'app-incidencia-publica',
+  templateUrl: './incidencia-publica.component.html',
+  styleUrls: ['./incidencia-publica.component.css']
 })
-export class IncidenciaComponent implements OnInit {
+export class IncidenciaPublicaComponent implements OnInit {
   constructor(
     private router: Router,
     private tokenService: TokenStorageService
@@ -23,7 +23,7 @@ export class IncidenciaComponent implements OnInit {
   goToIncidencia(incidencia: Incidencia): void {
     window.localStorage.removeItem('INCIDENCIA');
     window.localStorage.setItem('INCIDENCIA', JSON.stringify(incidencia));
-    this.router.navigateByUrl('miincidencia');
+    this.router.navigateByUrl('incidencia');
   }
 
   esMuyListo(cadena): any {

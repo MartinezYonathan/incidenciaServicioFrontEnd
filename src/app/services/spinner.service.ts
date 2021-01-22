@@ -10,6 +10,8 @@ export class SpinnerService {
 
   public llamarSpinner(){
     this.spinner.show();
+    console.log("llamo a spinner");
+    
   }
 
   public detenerSpinner(){
