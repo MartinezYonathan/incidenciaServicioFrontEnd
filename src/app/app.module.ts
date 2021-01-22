@@ -42,6 +42,9 @@ import { IncidenciCompletaComponent } from './components/incidencias/ver/inciden
 import { MapComponent } from './components/map/map/map.component';
 import { MarkerComponent } from './components/map/marker/marker.component';
 import { OpcionesComponent } from './components/map/opciones/opciones.component';
+import { EvidenciaComponent } from './components/incidencias/evidencia/evidencia.component';
+import { IncidenciCompletaPublicaComponent } from './components/incidencias/ver/incidenci-completa-publica/incidenci-completa-publica.component';
+import { IncidenciaPublicaComponent } from './components/incidencias/ver/incidencia-publica/incidencia-publica.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +68,10 @@ import { OpcionesComponent } from './components/map/opciones/opciones.component'
     OpcionesComponent,
     ComentarioComponent,
     IncidenciCompletaComponent,
-    FooterComponent
+    FooterComponent,
+    EvidenciaComponent,
+    IncidenciCompletaPublicaComponent,
+    IncidenciaPublicaComponent
   ],
   imports: [
     BrowserModule,

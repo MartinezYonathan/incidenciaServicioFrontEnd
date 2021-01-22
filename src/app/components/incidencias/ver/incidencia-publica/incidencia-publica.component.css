@@ -1,0 +1,110 @@
+.post {
+    --post-line-color: #ccc;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #878A8C;
+    position: relative;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.btnCommments {
+    color: #878A8C;
+    opacity: 1;
+}
+
+.pos {
+    background-color: transparent;
+    border-color: #a12121;
+    color: #a12121;
+    fill: #a12121;
+    border: 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 3px 16px;
+    opacity: 1;
+    margin-left: 2%;
+    position: absolute;
+    right: 0;
+}
+
+.posdelete {
+    background-color: transparent;
+    border-color: #a12121;
+    color: #a12121;
+    fill: #a12121;
+    border: 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 3px 16px;
+    opacity: 1;
+    margin-left: 5px;
+}
+
+.btnCommments:hover {
+    opacity: 0.65;
+    cursor: pointer;
+}
+
+.post-title {
+    font-size: 28px;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.posturl,
+.postname {
+    color: #504f4f;
+}
+
+.subreddit-text {
+    font-weight: bold;
+}
+
+.post-text {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 800px) {}
+
+
+.login{
+    background-color: transparent;
+    border-color: #a12121;
+    color: #a12121;
+    fill: #a12121;
+    border: 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 3px 16px;
+    opacity: 1;
+    margin-left: 5px;
+    right: 0;
+}
+
