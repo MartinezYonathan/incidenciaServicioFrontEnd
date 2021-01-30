@@ -37,6 +37,7 @@ import { RegistroIncidenciaComponent } from './components/incidencias/registro/r
 import { IncidenciaComponent } from './components/incidencias/ver/incidencia/incidencia.component';
 import { ComentarioComponent } from './components/incidencias/comentario/comentario/comentario.component';
 import { IncidenciCompletaComponent } from './components/incidencias/ver/incidenci-completa/incidenci-completa.component';
+import { ExpedienteComponent } from './components/incidencias/expediente/expediente.component';
 
 //mapas
 import { MapComponent } from './components/map/map/map.component';
@@ -73,7 +74,8 @@ import { SeguimientoComponent } from './components/incidencias/seguimiento/segui
     EvidenciaComponent,
     IncidenciCompletaPublicaComponent,
     IncidenciaPublicaComponent,
-    SeguimientoComponent
+    SeguimientoComponent,
+    ExpedienteComponent
   ],
   imports: [
     BrowserModule,
