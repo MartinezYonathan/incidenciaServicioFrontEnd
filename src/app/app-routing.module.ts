@@ -24,6 +24,8 @@ import { RegistroIncidenciaComponent } from './components/incidencias/registro/r
 import { IncidenciCompletaComponent } from './components/incidencias/ver/incidenci-completa/incidenci-completa.component';
 import { IncidenciCompletaPublicaComponent } from './components/incidencias/ver/incidenci-completa-publica/incidenci-completa-publica.component';
 import { IncidenciaPublicaComponent } from './components/incidencias/ver/incidencia-publica/incidencia-publica.component';
+import { IncidenciaExpedienteComponent } from './components/incidencias/expediente/incidencia/incidencia.component';
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -34,6 +36,7 @@ const routes: Routes = [
   { path: 'newpass', component: NewComponent },
   { path: 'login/reset', component: ResetComponent },
   { path: 'incidencias', component: IncidenciasComponent },
+  { path: 'incidenciasexpediente', component: IncidenciaExpedienteComponent },
   { path: 'incidencia', component: IncidenciCompletaPublicaComponent },
   { path: 'miincidencia', component: IncidenciCompletaComponent },
   { path: 'estadisticas', component: EstadisticasComponent },
