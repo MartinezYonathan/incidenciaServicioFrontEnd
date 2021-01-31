@@ -63,8 +63,8 @@
                             ESTATUS
                         </div>
                     </div>
-                    
-                    <div class="row" *ngFor="let expediente of expedientes" (click)="goToIncidencia(expediente)">
+
+                    <div class="row" *ngFor="let expediente of expedientes" (click)="goToIncidencia(expediente)" (contextmenu)="open($event, expediente); $event. preventDefault();">
                         <div class="cell" data-title="nombre">
                             {{expediente.nomIncidencia}}
                         </div>
@@ -81,8 +81,15 @@
                             <span class="status--{{expediente.status}}">{{expediente.status}}</span>
                         </div>
                     </div>
+                
 
                 </div>
         </div>
     </div>
 </div>
+
+<ng-template #userMenu let-expedientes>
+    <section class="user-menu">
+      <div (click)="goToIncidencia(expedientes)">ver incidencia</div>
+    </section>
+</ng-template>

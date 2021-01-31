@@ -7,7 +7,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { SpinnerInterceptorService } from './helpers/spinner-interceptor.service';
-
+import { OverlayModule } from '@angular/cdk/overlay';
 //Servicios
 
 //Rutas
@@ -80,6 +80,7 @@ import { SeguimientoComponent } from './components/incidencias/seguimiento/segui
     IncidenciaExpedienteComponent
   ],
   imports: [
+    OverlayModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
