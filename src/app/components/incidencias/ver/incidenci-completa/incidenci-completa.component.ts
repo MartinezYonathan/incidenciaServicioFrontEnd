@@ -16,12 +16,15 @@ export class IncidenciCompletaComponent implements OnInit {
   form: any = {};
   isSuccessful = false;
   username: string;
+  tipoIncidencia: string;
 
   constructor(private comentarioService: ComentarioService) { }
 
   ngOnInit(): void {
     this.username = sessionStorage.getItem('auth-user');
     this.incidencia = this.getIncidencia();
+    this.tipoIncidencia = this.getIncidencia().tipoIncidencia;
+
     if (this.username) {
       this.getCometariosByIncidencia();
     }

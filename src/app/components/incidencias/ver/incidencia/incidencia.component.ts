@@ -26,8 +26,4 @@ export class IncidenciaComponent implements OnInit {
     this.router.navigateByUrl('miincidencia');
   }
 
-  esMuyListo(cadena): any {
-    console.log(cadena);
-    return cadena;
-  }
 }

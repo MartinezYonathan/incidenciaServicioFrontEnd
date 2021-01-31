@@ -7,7 +7,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { SpinnerInterceptorService } from './helpers/spinner-interceptor.service';
-
+import { OverlayModule } from '@angular/cdk/overlay';
 //Servicios
 
 //Rutas
@@ -37,6 +37,8 @@ import { RegistroIncidenciaComponent } from './components/incidencias/registro/r
 import { IncidenciaComponent } from './components/incidencias/ver/incidencia/incidencia.component';
 import { ComentarioComponent } from './components/incidencias/comentario/comentario/comentario.component';
 import { IncidenciCompletaComponent } from './components/incidencias/ver/incidenci-completa/incidenci-completa.component';
+import { ExpedienteComponent } from './components/incidencias/expediente/expediente.component';
+import { IncidenciaExpedienteComponent } from './components/incidencias/expediente/incidencia/incidencia.component';
 
 //mapas
 import { MapComponent } from './components/map/map/map.component';
@@ -73,9 +75,12 @@ import { SeguimientoComponent } from './components/incidencias/seguimiento/segui
     EvidenciaComponent,
     IncidenciCompletaPublicaComponent,
     IncidenciaPublicaComponent,
-    SeguimientoComponent
+    SeguimientoComponent,
+    ExpedienteComponent,
+    IncidenciaExpedienteComponent
   ],
   imports: [
+    OverlayModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
