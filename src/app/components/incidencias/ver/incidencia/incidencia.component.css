@@ -9,6 +9,12 @@
     position: relative;
     border-radius: 4px;
     padding: 5px;
+    
+}
+
+.centrarCaja {
+    position:relative;
+    left:30%;
 }
 
 .btnCommments {
@@ -84,10 +90,30 @@
     margin-top: 10px;
 }
 
-@media screen and (max-width: 800px) {}
+.imagenlogo{
+    position:relative;
+    left:-33%;}
+
+  
+  /* On screens that are 992px or less, set the background color to blue */
+  @media screen and (max-width: 992px) {
+    .imagenlogo{
+        position:relative;
+        left:-33%;}
+    }
+  
+  /* On screens that are 600px or less, set the background color to olive */
+  @media screen and (max-width: 600px) {
+    .imagenlogo{
+        position:relative;
+        left:-33%;}
+        
+    }
 
 
 .login{
+    display: block;
+    width: 100%;
     background-color: transparent;
     border-color: #a12121;
     color: #a12121;
@@ -108,3 +134,12 @@
     right: 0;
 }
 
+
+.align-items-center {
+    -ms-flex-align: center!important;
+    align-items: center!important;
+  }
+  .d-flex {
+    display: -ms-flexbox!important;
+    display: flex!important;
+  }
