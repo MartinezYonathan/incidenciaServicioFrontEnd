@@ -2,38 +2,13 @@
 <br />
 <br />
 <div class="container" *ngIf="token; else loggedOut">
-    <header class="jumbotron">
-        <h3>
-            <strong> Bienvenido {{ username }}</strong>
-        </h3>
-    </header>
-    <p>
-        <!--<strong>Token:</strong> {{ token.substring(0, 20) }} ... {{ token.substr(token.length - 20) }}-->
-    </p>
-    <!--
-    <strong>Roles:</strong>
-    <ul>
-        <li *ngFor="let role of roles">
-            {{ role }}
-        </li>
-    </ul>
-    -->
-    <div>
-        <br /> Ha agregado <b>{{incidenciasLength}}</b> incidencia (s) y Puedes
-        consultar tu historial de incidencias.
-    </div>
-    <hr />
-    <div>
-        <h3 class="title-5 m-b-35">Tus expedientes de incidencias:</h3>
-    </div>
-    <app-expediente> </app-expediente> 
-    <!--
-    <app-incidencia [incidencias]="incidencias"></app-incidencia>
-    -->
-    <hr />
-
+  <br />
+  <header class="jumbotron">
+    <h3>
+      <strong> Bienvenido {{ username }}</strong>
+    </h3>
+  </header>
+  <app-expediente> </app-expediente>
 </div>
 
-<ng-template #loggedOut>
-    Please login.
-</ng-template>
+<ng-template #loggedOut> Please login. </ng-template>

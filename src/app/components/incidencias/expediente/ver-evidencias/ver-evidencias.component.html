@@ -1,0 +1,32 @@
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row">
+        <hr />
+        <div class="col-md-9">
+            <div class="row post">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-11"> 
+                    <div class="heading text-center mx-auto">
+                        <h3 class="head">Ver evidencia. </h3>
+                    </div>
+                   
+                    <div class="card-header">List of Files</div>
+                    <ul
+                        class="list-group list-group-flush"
+                        *ngFor="let evidencia of evidencias"
+                    >
+                        <li class="list-group-item">
+                            <button class="btnCreateSubreddit" (click)="download(evidencia)">
+                                {{ evidencia.name }}
+                            </button>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

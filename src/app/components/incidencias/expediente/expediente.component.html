@@ -1,95 +1,55 @@
-<!--
-<app-incidencia-publica [incidencias]="incidencias"></app-incidencia-publica>
-
-<hr />
-<a class='flotante' [routerLink]="['tipo']"><img src="assets/img/add.svg" border="0"/></a>
-<br />
-<br />
-<div class="table-data__tool">
-    <div class="table-data__tool-left">
-        <div class="rs-select2--light rs-select2--md">
-            <select class="js-select2" name="property">
-                <option selected="selected">All Properties</option>
-                <option value="">Option 1</option>
-                <option value="">Option 2</option>
-            </select>
-            <div class="dropDownSelect2"></div>
-        </div>
-        <div class="rs-select2--light rs-select2--sm">
-            <select class="js-select2" name="time">
-                <option selected="selected">Today</option>
-                <option value="">3 Days</option>
-                <option value="">1 Week</option>
-            </select>
-            <div class="dropDownSelect2"></div>
-        </div>
-        <button class="au-btn-filter">
-            <i class="zmdi zmdi-filter-list"></i>filters</button>
-    </div>
-    <div class="table-data__tool-right">
-        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-            <i class="zmdi zmdi-plus"></i>add item</button>
-        <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
-            <select class="js-select2" name="type">
-                <option selected="selected">Export</option>
-                <option value="">Option 1</option>
-                <option value="">Option 2</option>
-            </select>
-            <div class="dropDownSelect2"></div>
-        </div>
-    </div>
+<div>
+  <br />
+  Has agregado <b>{{ expedientes.length }}</b> incidencia (s) y Puedes consultar
+  tu historial de incidencias.
 </div>
--->
-
+<hr />
+<div>
+  <h3 class="title-5 m-b-35">Tus expedientes de incidencias:</h3>
+</div>
 <div class="limiter">
-    <div class="container-table100">
-        <div class="wrap-table100">
-                <div class="table" >
-
-                    <div class="row header">
-                        <div class="cell">
-                            NOMBRE INCIDENCIA
-                        </div>
-                        <div class="cell">
-                            FOLIO
-                        </div>
-                        <div class="cell">
-                            ADMIN
-                        </div>
-                        <div class="cell">
-                            FECHA
-                        </div>
-                        <div class="cell">
-                            ESTATUS
-                        </div>
-                    </div>
-
-                    <div class="row" *ngFor="let expediente of expedientes" (click)="goToIncidencia(expediente)" (contextmenu)="open($event, expediente); $event. preventDefault();">
-                        <div class="cell" data-title="nombre">
-                            {{expediente.nomIncidencia}}
-                        </div>
-                        <div class="cell" data-title="folio">
-                            {{expediente.folio}}
-                        </div>
-                        <div class="cell" data-title="admin">
-                            {{expediente.administrador}}
-                        </div>
-                        <div class="cell" data-title="fecha">
-                            {{expediente.dateCreacion}}
-                        </div>
-                        <div class="cell" data-title="status">
-                            <span class="status--{{expediente.status}}">{{expediente.status}}</span>
-                        </div>
-                    </div>
-                
-
-                </div>
+  <div class="container-table100">
+    <div class="wrap-table100">
+      <div class="table">
+        <div class="row header">
+          <div class="cell">NOMBRE INCIDENCIA</div>
+          <div class="cell">FOLIO</div>
+          <div class="cell">ADMIN</div>
+          <div class="cell">FECHA</div>
+          <div class="cell">ESTATUS</div>
         </div>
+
+        <div
+          class="row"
+          *ngFor="let expediente of expedientes"
+          (click)="goToIncidencia(expediente)"
+          (contextmenu)="open($event, expediente); $event.preventDefault()"
+        >
+          <div class="cell" data-title="nombre">
+            {{ expediente.nomIncidencia }}
+          </div>
+          <div class="cell" data-title="folio">
+            {{ expediente.folio }}
+          </div>
+          <div class="cell" data-title="admin">
+            {{ expediente.administrador }}
+          </div>
+          <div class="cell" data-title="fecha">
+            {{ expediente.dateCreacion }}
+          </div>
+          <div class="cell" data-title="status">
+            <span class="status--{{ expediente.status }}">{{
+              expediente.status
+            }}</span>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <ng-template #userMenu let-expedientes>
-    <section class="user-menu">
-      <div (click)="goToIncidencia(expedientes)">ver incidencia</div>
-    </section>
+  <section class="user-menu">
+    <div (click)="goToIncidencia(expedientes)">ver incidencia</div>
+  </section>
 </ng-template>

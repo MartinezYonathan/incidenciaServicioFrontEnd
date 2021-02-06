@@ -49,6 +49,10 @@ import { IncidenciCompletaPublicaComponent } from './components/incidencias/ver/
 import { IncidenciaPublicaComponent } from './components/incidencias/ver/incidencia-publica/incidencia-publica.component';
 import { SeguimientoComponent } from './components/incidencias/seguimiento/seguimiento.component';
 
+//expediente
+import { AgregarEvidenciasComponent } from './components/incidencias/expediente/agregar-evidencias/agregar-evidencias.component';
+import { VerEvidenciasComponent } from './components/incidencias/expediente/ver-evidencias/ver-evidencias.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,7 +81,9 @@ import { SeguimientoComponent } from './components/incidencias/seguimiento/segui
     IncidenciaPublicaComponent,
     SeguimientoComponent,
     ExpedienteComponent,
-    IncidenciaExpedienteComponent
+    IncidenciaExpedienteComponent,
+    AgregarEvidenciasComponent,
+    VerEvidenciasComponent
   ],
   imports: [
     OverlayModule,

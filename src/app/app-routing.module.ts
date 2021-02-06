@@ -26,9 +26,15 @@ import { IncidenciCompletaPublicaComponent } from './components/incidencias/ver/
 import { IncidenciaPublicaComponent } from './components/incidencias/ver/incidencia-publica/incidencia-publica.component';
 import { IncidenciaExpedienteComponent } from './components/incidencias/expediente/incidencia/incidencia.component';
 
+//expediente
+import { AgregarEvidenciasComponent } from './components/incidencias/expediente/agregar-evidencias/agregar-evidencias.component';
+import { VerEvidenciasComponent } from './components/incidencias/expediente/ver-evidencias/ver-evidencias.component';
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'addevidencia', component: AgregarEvidenciasComponent },
+  { path: 'evidencias', component: VerEvidenciasComponent },
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'registro', component: PreRegistroComponent },

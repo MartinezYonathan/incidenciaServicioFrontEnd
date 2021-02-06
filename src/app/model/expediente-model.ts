@@ -2,6 +2,7 @@ import { Incidencia } from './incidencia-model';
 import { Evidencia } from './evidencia-model';
 
 export class Expediente {
+    id: number;
     administrador: string;
     username: string;
     informe: string;
