@@ -6,16 +6,16 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 @Component({
   selector: 'app-incidencia-publica',
   templateUrl: './incidencia-publica.component.html',
-  styleUrls: ['./incidencia-publica.component.css']
+  styleUrls: ['./incidencia-publica.component.css'],
 })
 export class IncidenciaPublicaComponent implements OnInit {
   constructor(
     private router: Router,
     private tokenService: TokenStorageService
   ) {}
-  @Input() incidencias: any[];
+  @Input() incidencias: any[] = [];
   username: string;
-
+  
   ngOnInit(): void {
     this.username = this.tokenService.getUser();
   }

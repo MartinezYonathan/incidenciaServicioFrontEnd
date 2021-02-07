@@ -1,0 +1,85 @@
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+  <div class="row">
+    <hr />
+    <div class="col-md-9">
+      <br />
+      <div class="">
+        <a href="profile" (click)="expediente()" class="btn-flotante"
+          >EXPEDIENTES</a
+        >
+        <a href="evidencias" (click)="evidencia()" class="btn-flotante"
+          >EVIDENCIAS</a
+        >
+        <a
+          href="incidenciasexpediente"
+          (click)="incidencia()"
+          class="btn-flotante"
+          >INCIDENCIA</a
+        >
+      </div>
+      <div class="row post">
+        <div class="col-md-1"></div>
+        <div class="col-md-11">
+          <br />
+          <br />
+          <div class="heading text-center mx-auto">
+            <h3 class="head">Agregar evidencia.</h3>
+            <br />
+            <br />
+          </div>
+          <div class="heading text-center mx-auto">
+            <div class="row">
+              <div class="span8">
+                <label class="">
+                  <input type="file" (change)="selectFile($event)" />
+                </label>
+              </div>
+
+              <div class="span4">
+                <button
+                  class="login"
+                  [disabled]="!selectedFiles"
+                  (click)="upload()"
+                >
+                  Upload
+                </button>
+              </div>
+            </div>
+
+            <div *ngIf="currentFile" class="progress my-3">
+              <div
+                class="progress-bar progress-bar-info progress-bar-striped"
+                role="progressbar"
+                attr.aria-valuenow="{{ progress }}"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                [ngStyle]="{ width: progress + '%' }"
+              >
+                {{ progress }}%
+              </div>
+            </div>
+
+            <div *ngIf="message" class="alert alert-secondary" role="alert">
+              {{ message }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+

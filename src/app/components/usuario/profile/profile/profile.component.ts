@@ -17,22 +17,14 @@ export class ProfileComponent implements OnInit {
   showModeratorBoard = false;
   username: string;
   token: any;
-  incidencias: any[];
-  incidenciasLength: number;
   
   constructor(private tokenService: TokenStorageService,
     private expedienteService: ExpedienteService) { }
+
   ngOnInit(): void {
     this.username = this.tokenService.getUser();
     this.token = this.tokenService.getToken();
     this.roles = this.tokenService.getRoles();
-
-    
-    this.expedienteService.getAllExpedientesByUser().subscribe(data => {
-      this.incidenciasLength = data.length;
-      
-    });
-    
   }
 
 }
