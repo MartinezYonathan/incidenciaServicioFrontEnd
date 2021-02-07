@@ -3,12 +3,13 @@ import { throwError } from 'rxjs';
 import { Incidencia } from 'src/app/model/incidencia-model';
 import { Comentario } from 'src/app/model/comentario-model';
 import { ComentarioService } from 'src/app/services/comentario.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-incidenci-completa',
   templateUrl: './incidenci-completa.component.html',
-  styleUrls: ['./incidenci-completa.component.css']
+  styleUrls: ['./incidenci-completa.component.css'],
 })
 export class IncidenciCompletaComponent implements OnInit {
   incidencia: Incidencia;
@@ -18,7 +19,10 @@ export class IncidenciCompletaComponent implements OnInit {
   username: string;
   tipoIncidencia: string;
 
-  constructor(private comentarioService: ComentarioService) { }
+  constructor(
+    private comentarioService: ComentarioService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.username = sessionStorage.getItem('auth-user');
@@ -31,54 +35,73 @@ export class IncidenciCompletaComponent implements OnInit {
   }
 
   public getIncidencia(): Incidencia {
-    return JSON.parse(localStorage.getItem("INCIDENCIA"));
+    return JSON.parse(localStorage.getItem('INCIDENCIA'));
+  }
+
+  expediente() {
+    this.router.navigateByUrl('profile');
+  }
+
+  evidencia() {
+    this.router.navigateByUrl('evidencias');
+  }
+
+  incidenci() {
+    this.router.navigateByUrl('incidenciasexpediente');
   }
 
   onSubmit(): void {
     this.form.incidencia_id = this.incidencia.id;
     const text = this.form.text;
-    if (!(text.trim() == "")) {
+    if (!(text.trim() == '')) {
       if (this.username) {
-        this.comentarioService.incidenciaComentario(this.form).subscribe(data => {
-          this.getCometariosByIncidencia();
-          this.form.text = " ";
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'comentario agregado.',
-            showConfirmButton: false,
-            timer: 1500,
-            backdrop: `
+        this.comentarioService.incidenciaComentario(this.form).subscribe(
+          (data) => {
+            this.getCometariosByIncidencia();
+            this.form.text = ' ';
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'comentario agregado.',
+              showConfirmButton: false,
+              timer: 1500,
+              backdrop: `
               rgba(0,0,123,0.4)
               left top
               no-repeat
-            `
-          })
-        }, error => {
-          throwError(error);
-        })
+            `,
+            });
+          },
+          (error) => {
+            throwError(error);
+          }
+        );
       } else {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Tienes que iniciar sesión para comentar!'
-        })
+          text: 'Tienes que iniciar sesión para comentar!',
+        });
       }
-    }else{
+    } else {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Tienes agregar un comentario!'
-      })
+        text: 'Tienes agregar un comentario!',
+      });
     }
-
   }
 
   private getCometariosByIncidencia() {
-    this.comentarioService.getAllComentariosByIncidencia(this.incidencia.id).subscribe(data => {
-      this.comments = data;
-    }, error => {
-      throwError(error);
-    });
+    this.comentarioService
+      .getAllComentariosByIncidencia(this.incidencia.id)
+      .subscribe(
+        (data) => {
+          this.comments = data;
+        },
+        (error) => {
+          throwError(error);
+        }
+      );
   }
 }
