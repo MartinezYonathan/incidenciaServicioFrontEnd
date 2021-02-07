@@ -12,6 +12,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if(!this.isLoggedIn){
+      window.localStorage.removeItem('INCIDENCIA');
+      window.localStorage.removeItem('EXPEDIENTE');
+      window.localStorage.removeItem('LATITUD');
+      window.localStorage.removeItem('LONGITUD');
+      window.localStorage.removeItem('TIPO-INCIDENCIA');
+    }
   }
 
 }

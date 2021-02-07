@@ -18,11 +18,15 @@ export class IncidenciaComponent implements OnInit {
   expedientes: Expediente;
   username: string;
 
+  roles: string[];
+  isLoggedIn = false;
+  token: any;
+
   ngOnInit(): void {
     this.username = this.tokenService.getUser();
     this.expedientes = JSON.parse(window.localStorage.getItem("EXPEDIENTE"));
     this.incidencias = this.expedientes.incidencias;
-
+    this.token = this.tokenService.getToken();
   }
 
   goToIncidencia(incidencia: Incidencia): void {
