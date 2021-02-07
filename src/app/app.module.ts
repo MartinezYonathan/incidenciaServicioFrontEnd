@@ -8,6 +8,9 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { SpinnerInterceptorService } from './helpers/spinner-interceptor.service';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
 //Servicios
 
 //Rutas
@@ -52,6 +55,7 @@ import { SeguimientoComponent } from './components/incidencias/seguimiento/segui
 //expediente
 import { AgregarEvidenciasComponent } from './components/incidencias/expediente/agregar-evidencias/agregar-evidencias.component';
 import { VerEvidenciasComponent } from './components/incidencias/expediente/ver-evidencias/ver-evidencias.component';
+import { PaginationComponent } from './components/pagination/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +87,8 @@ import { VerEvidenciasComponent } from './components/incidencias/expediente/ver-
     ExpedienteComponent,
     IncidenciaExpedienteComponent,
     AgregarEvidenciasComponent,
-    VerEvidenciasComponent
+    VerEvidenciasComponent,
+    PaginationComponent
   ],
   imports: [
     OverlayModule,
@@ -92,7 +97,8 @@ import { VerEvidenciasComponent } from './components/incidencias/expediente/ver-
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgxPaginationModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

@@ -31,4 +31,15 @@ export class IncidenciaComponent implements OnInit {
     this.router.navigateByUrl('miincidencia');
   }
 
+  expediente() {
+    this.router.navigateByUrl('profile');
+  }
+
+  evidencia() {
+    this.router.navigateByUrl('evidencias');
+  }
+
+  incidencia() {
+    this.router.navigateByUrl('incidenciasexpediente');
+  }
 }

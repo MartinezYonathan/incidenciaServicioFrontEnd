@@ -1,32 +1,85 @@
 <br />
 <br />
 <br />
+<br />
 <div class="container">
-    <div class="row">
-        <hr />
-        <div class="col-md-9">
-            <div class="row post">
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-11"> 
-                    <div class="heading text-center mx-auto">
-                        <h3 class="head">Ver evidencia. </h3>
-                    </div>
-                   
-                    <div class="card-header">List of Files</div>
-                    <ul
-                        class="list-group list-group-flush"
-                        *ngFor="let evidencia of evidencias"
-                    >
-                        <li class="list-group-item">
-                            <button class="btnCreateSubreddit" (click)="download(evidencia)">
-                                {{ evidencia.name }}
-                            </button>
-                        </li>
-                    </ul>
-                    
-                </div>
+  <div class="row">
+    <hr />
+    <div class="col-md-9">
+      <br />
+      <div class="">
+        <a href="profile" (click)="expediente()" class="btn-flotante"
+          >EXPEDIENTES</a
+        >
+        <a href="addevidencia" (click)="evidencia()" class="btn-flotante"
+          >AGREGAR EVIDENCIA</a
+        >
+        <a
+          href="incidenciasexpediente"
+          (click)="incidencia()"
+          class="btn-flotante"
+          >INCIDENCIA</a
+        >
+      </div>
+      <div class="row post">
+        <div class="col-md-1"></div>
+        <div class="col-md-11">
+          <br />
+          <br />
+          <div class="heading text-center mx-auto">
+            <h3 class="head">Evidencias.</h3>
+            <br />
+            <br />
+          </div>
+          <div class="heading text-center mx-auto">
+            <div class="row">
+              <div class="head">Lista de Archivos</div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Ver</th>
+                    <th scope="col">Guardar</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let evidencia of evidencias">
+                  <tr>
+                    <th scope="row">{{evidencia.id}}</th>
+                    <td>{{ evidencia.name }}</td>
+                    <td>
+                      <button
+                        class="login"
+                        (click)="ver(evidencia)"
+                      >
+                        <i class="far fa-2x fa-eye"></i>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="login"
+                        (click)="guardar(evidencia)"
+                      >
+                        <i class="far fa-2x fa-save"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+    <div class="col-md-3"></div>
+  </div>
 </div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
