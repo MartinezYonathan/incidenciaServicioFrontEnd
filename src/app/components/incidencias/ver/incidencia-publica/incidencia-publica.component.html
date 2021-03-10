@@ -1,0 +1,57 @@
+<!-- content-with-photo17 -->
+<div class="w3l-index-block4">
+  <div class="features-bg py-5">
+    <!-- features15 block -->
+    <div class="container py-md-3">
+      <div class="heading text-center mx-auto">
+        <h3 class="head">Incidencias.</h3>
+        <p class="my-3 head"></p>
+      </div>
+      <div class="row post">
+        <div
+          class="col-md-6 features15-col-text"
+          style="margin-top: 25px"
+          *ngFor="let incidencia of incidencias"
+        >
+          <a class="d-flex flex-wrap feature-unit align-items-center">
+            <div class="col-sm-3">
+              <div class="features15-info">
+                <img
+                  src="assets/img/{{ incidencia.tipoIncidencia }}.svg"
+                  class="img-fluid"
+                  alt="main image"
+                />
+              </div>
+            </div>
+            <div class="col-sm-9 mt-sm-0 mt-4">
+              <div class="features15-para">
+                <a class="btnCommments" (click)="goToIncidencia(incidencia)"
+                  ><h4>{{ incidencia.titulo }}</h4></a
+                >
+                <span class="subreddit-text"
+                  ><a class="posturl">{{ incidencia.tipoIncidencia }}</a></span
+                >
+                <p>{{ incidencia.dateCreacion }}.</p>
+              </div>
+              <a class="btnCommments" role="button">
+                <fa-icon [icon]="faComments"></fa-icon>
+              </a>
+              <button class="login" (click)="goToIncidencia(incidencia)">
+                Ver incidencia
+              </button>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ngx-spinner
+  bdColor="rgba(161,32,32,0.8)"
+  size="medium"
+  color="#fff"
+  type="square-jelly-box"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>

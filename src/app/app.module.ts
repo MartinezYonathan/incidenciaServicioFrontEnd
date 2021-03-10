@@ -7,6 +7,9 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { SpinnerInterceptorService } from './helpers/spinner-interceptor.service';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 //Servicios
 
@@ -37,11 +40,22 @@ import { RegistroIncidenciaComponent } from './components/incidencias/registro/r
 import { IncidenciaComponent } from './components/incidencias/ver/incidencia/incidencia.component';
 import { ComentarioComponent } from './components/incidencias/comentario/comentario/comentario.component';
 import { IncidenciCompletaComponent } from './components/incidencias/ver/incidenci-completa/incidenci-completa.component';
+import { ExpedienteComponent } from './components/incidencias/expediente/expediente.component';
+import { IncidenciaExpedienteComponent } from './components/incidencias/expediente/incidencia/incidencia.component';
 
 //mapas
 import { MapComponent } from './components/map/map/map.component';
 import { MarkerComponent } from './components/map/marker/marker.component';
 import { OpcionesComponent } from './components/map/opciones/opciones.component';
+import { EvidenciaComponent } from './components/incidencias/evidencia/evidencia.component';
+import { IncidenciCompletaPublicaComponent } from './components/incidencias/ver/incidenci-completa-publica/incidenci-completa-publica.component';
+import { IncidenciaPublicaComponent } from './components/incidencias/ver/incidencia-publica/incidencia-publica.component';
+import { SeguimientoComponent } from './components/incidencias/seguimiento/seguimiento.component';
+
+//expediente
+import { AgregarEvidenciasComponent } from './components/incidencias/expediente/agregar-evidencias/agregar-evidencias.component';
+import { VerEvidenciasComponent } from './components/incidencias/expediente/ver-evidencias/ver-evidencias.component';
+import { PaginationComponent } from './components/pagination/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -65,15 +79,26 @@ import { OpcionesComponent } from './components/map/opciones/opciones.component'
     OpcionesComponent,
     ComentarioComponent,
     IncidenciCompletaComponent,
-    FooterComponent
+    FooterComponent,
+    EvidenciaComponent,
+    IncidenciCompletaPublicaComponent,
+    IncidenciaPublicaComponent,
+    SeguimientoComponent,
+    ExpedienteComponent,
+    IncidenciaExpedienteComponent,
+    AgregarEvidenciasComponent,
+    VerEvidenciasComponent,
+    PaginationComponent
   ],
   imports: [
+    OverlayModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgxPaginationModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

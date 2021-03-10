@@ -40,6 +40,7 @@ export class IncidenciasComponent implements OnInit {
       this.incidenciasLength = data.length;
     });
   }
+  
   postComment() {
 
   }

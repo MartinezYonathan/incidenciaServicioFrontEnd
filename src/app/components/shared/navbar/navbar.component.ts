@@ -30,6 +30,10 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
+
   setNavbarOpen() {
     this.navbarOpen = !this.navbarOpen;
   }

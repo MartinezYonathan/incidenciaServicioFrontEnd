@@ -9,9 +9,7 @@ export class SpinnerService {
   constructor(private spinner: NgxSpinnerService) { }
 
   public llamarSpinner(){
-    this.spinner.show();
-    console.log("llamo a spinner");
-    
+    this.spinner.show();  
   }
 
   public detenerSpinner(){
