@@ -30,6 +30,10 @@ import { IncidenciaExpedienteComponent } from './components/incidencias/expedien
 import { AgregarEvidenciasComponent } from './components/incidencias/expediente/agregar-evidencias/agregar-evidencias.component';
 import { VerEvidenciasComponent } from './components/incidencias/expediente/ver-evidencias/ver-evidencias.component';
 
+//contacto
+import { ContactoComponent } from './components/incidencias/contacto/contacto.component';
+import { VerContactoComponent } from './components/incidencias/contacto/ver-contacto/ver-contacto.component';
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -37,6 +41,8 @@ const routes: Routes = [
   { path: 'evidencias', component: VerEvidenciasComponent },
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'contacto', component: VerContactoComponent },
+  { path: 'contacto/registro', component: ContactoComponent },
   { path: 'registro', component: PreRegistroComponent },
   { path: 'registro/activar', component: ActiRegistroComponent },
   { path: 'newpass', component: NewComponent },
