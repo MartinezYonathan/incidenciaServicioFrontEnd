@@ -28,7 +28,14 @@
           >
         </div>
         <div class="form-inline" *ngIf="isLoggedIn">
-          <a class="login mr-4" [routerLink]="['profile']">{{ username }}</a>
+          <ul class="nav">
+            <li><a class="login mr-4">{{ username }}</a>
+              <ul>
+                <li><a class="login mr-4" [routerLink]="['profile']">Mis Incidencias</a></li>
+                <li><a class="login mr-4" [routerLink]="['contacto']">Mis Contactos</a></li>
+              </ul>
+            </li>
+        </ul>
           <a
             href
             class="btn btn-primary btn-theme btnRegistar"
