@@ -1,0 +1,82 @@
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+  <div class="row">
+    <hr />
+    <div class="col-md-9">
+      <br />
+      <div class="">
+      </div>
+      <div class="row post">
+        <div class="col-md-1"></div>
+        <div class="col-md-11">
+          <br />
+          <br />
+          <div class="heading text-center mx-auto">
+            <h3 class="head">MIS CONTACTO.</h3>
+            <br />
+            <br />
+          </div>
+          <div class="heading text-center mx-auto">
+            <div class="row">
+              <div class="head">Lista de contactos agregados</div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">#Telefono</th>
+                    <th scope="col">Parentesco</th>
+                    <th scope="col">Alarma</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Borrar</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let contacto of contactos">
+                  <tr>
+                    <td>{{ contacto.nombreCompleto }}</td>
+                    <td>{{ contacto.celular }}</td>
+                    <td>{{ contacto.parentesco }}</td>
+                    <td>{{ contacto.tipoAlarma }}</td>
+                    <td>
+                      <button
+                        class="login"
+                        (click)="editar(contacto)"
+                      >
+                        <i class="far fa-edit"></i>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="login"
+                        (click)="borrar(contacto)"
+                      >
+                        <i class="far  fa-trash-alt"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"><button
+      href="contacto/registro"
+      class="login"
+      (click)="addContacto()"
+    >Agregar Contacto</button>
+  </div>
+  </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

@@ -1,0 +1,65 @@
+<br />
+<br />
+<br />
+
+<div>
+    <div class="contenedor">
+        <div class="contenido-login" *ngIf="!isSuccessful">
+            <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <h2>Registro de contacto de confianza.</h2>
+                <h3>Puedes registrar los contactos que quieras.</h3>
+                <div>
+                    <div class="input-div nit">
+                        <div class="i">
+                            <i class="fas fa-font"></i>
+                        </div>
+                        <div class="div">
+                            <input type="text" class="form-control" name="nombreCompleto" [(ngModel)]="form.nombreCompleto" required
+                                #nombreCompleto="ngModel" class="input" placeholder="Nombre Completo" />
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="f.submitted && nombreCompleto.invalid">
+                        NombreCompleto es requerido!
+                    </div>
+                </div>
+                <div>
+                    <div class="input-div nit">
+                        <div class="i">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="div">
+                            <input type="text" class="form-control" name="celular" [(ngModel)]="form.celular" required
+                                #celular="ngModel" class="input" placeholder="Telefono celular" />
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="f.submitted && celular.invalid">
+                        celular es requerido!
+                    </div>
+                </div>
+           <!-------------------------Email------------------------->
+                <div>
+                <div class="input-div nit">
+                    <div class="i">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="div">
+                        <input type="correo" class="form-control" name="correo" [(ngModel)]="form.correo" required email #email="ngModel" class="input" #email="ngModel" placeholder="Correo" />
+                    </div>
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && correo.invalid">
+                    Correo es requerido!
+                </div>
+            </div>
+
+                <button class="btn btn-primary btn-block">Enviar Registro</button>
+
+                <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                    Signup failed!<br />{{ errorMessage }}
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="alert alert-success" *ngIf="isSuccessful">
+        Your registration is successful!
+    </div>
+</div>
