@@ -57,6 +57,10 @@ import { AgregarEvidenciasComponent } from './components/incidencias/expediente/
 import { VerEvidenciasComponent } from './components/incidencias/expediente/ver-evidencias/ver-evidencias.component';
 import { PaginationComponent } from './components/pagination/pagination/pagination.component';
 
+//contacto
+import { ContactoComponent } from './components/incidencias/contacto/contacto.component';
+import { VerContactoComponent } from './components/incidencias/contacto/ver-contacto/ver-contacto.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,7 +92,9 @@ import { PaginationComponent } from './components/pagination/pagination/paginati
     IncidenciaExpedienteComponent,
     AgregarEvidenciasComponent,
     VerEvidenciasComponent,
-    PaginationComponent
+    PaginationComponent,
+    ContactoComponent,
+    VerContactoComponent
   ],
   imports: [
     OverlayModule,
