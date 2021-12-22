@@ -42,7 +42,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'contacto', component: VerContactoComponent },
-  { path: 'contacto/registro', component: ContactoComponent },
+  { path: 'contacto/registro', component: ContactoComponent, canActivate: [AuthGuard] },
   { path: 'registro', component: PreRegistroComponent },
   { path: 'registro/activar', component: ActiRegistroComponent },
   { path: 'newpass', component: NewComponent },
