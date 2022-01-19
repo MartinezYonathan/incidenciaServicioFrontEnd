@@ -61,6 +61,9 @@ import { PaginationComponent } from './components/pagination/pagination/paginati
 import { ContactoComponent } from './components/incidencias/contacto/contacto.component';
 import { VerContactoComponent } from './components/incidencias/contacto/ver-contacto/ver-contacto.component';
 
+//Root
+import { AsignacionComponent } from './components/admin/asignacion/asignacion.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,7 +97,8 @@ import { VerContactoComponent } from './components/incidencias/contacto/ver-cont
     VerEvidenciasComponent,
     PaginationComponent,
     ContactoComponent,
-    VerContactoComponent
+    VerContactoComponent,
+    AsignacionComponent
   ],
   imports: [
     OverlayModule,
