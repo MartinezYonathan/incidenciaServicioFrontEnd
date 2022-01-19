@@ -33,6 +33,7 @@ import { VerEvidenciasComponent } from './components/incidencias/expediente/ver-
 //contacto
 import { ContactoComponent } from './components/incidencias/contacto/contacto.component';
 import { VerContactoComponent } from './components/incidencias/contacto/ver-contacto/ver-contacto.component';
+import { AsignacionComponent } from './components/admin/asignacion/asignacion.component';
 
 
 const routes: Routes = [
@@ -42,7 +43,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'contacto', component: VerContactoComponent },
-  { path: 'contacto/registro', component: ContactoComponent, canActivate: [AuthGuard] },
+  { path: 'contacto/registro', component: ContactoComponent },
   { path: 'registro', component: PreRegistroComponent },
   { path: 'registro/activar', component: ActiRegistroComponent },
   { path: 'newpass', component: NewComponent },
@@ -53,6 +54,7 @@ const routes: Routes = [
   { path: 'miincidencia', component: IncidenciCompletaComponent },
   { path: 'estadisticas', component: EstadisticasComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'admin/asignacion', component: AsignacionComponent },
   { path: 'incidencias/tipo', component: AddTipoComponent, canActivate: [AuthGuard]  },
   { path: 'incidencias/registro', component: RegistroIncidenciaComponent, canActivate: [AuthGuard]  },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
