@@ -31,8 +31,13 @@
           <ul class="nav">
             <li><a class="login mr-4">{{ username }}</a>
               <ul>
-                <li><a class="login mr-4" [routerLink]="['profile']">Mis Incidencias</a></li>
-                <li><a class="login mr-4" [routerLink]="['contacto']">Mis Contactos</a></li>
+                <li><a class="login mr-4" [routerLink]="['profile']">Incidencias</a></li>
+                <li><a class="login mr-4" [routerLink]="['contacto']">Contactos</a></li>
+                <li class="login mr-4" *ngIf="showAdminBoard">
+                  <a class="nav-link" [routerLink]="['admin/incidencias']">Seguimiento</a>
+                <li class="login mr-4" *ngIf="showModeratorBoard">
+                    <a class="nav-link" [routerLink]="['admin/asignacion']">Asignar</a>
+              </li>
               </ul>
             </li>
         </ul>
