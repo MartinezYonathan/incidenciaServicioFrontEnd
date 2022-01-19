@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -19,12 +20,13 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
+
     if (this.isLoggedIn) {
       const usernameToken = this.tokenStorageService.getUser();
       const rolesToken = this.tokenStorageService.getRoles();
       this.roles = rolesToken;
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      this.showModeratorBoard = this.roles.includes('ROLE_ROOT');
 
       this.username = usernameToken;
     }
