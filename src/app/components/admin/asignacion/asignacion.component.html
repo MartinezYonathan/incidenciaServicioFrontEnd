@@ -1,0 +1,67 @@
+
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <div class="heading text-center mx-auto">
+    <br />
+    <h1 class="head">Incidencias Registradas.</h1>
+    <p class="my-3 head"></p>
+  </div>
+  <hr />
+  <div class="limiter">
+      
+    <div class="container-table100">
+      <div class="wrap-table100">
+        <div class="table">
+          <div class="row header">
+            <div class="cell">INCIDENCIA</div>
+            <div class="cell">FOLIO</div>
+            <div class="cell">TIPO</div>
+            <div class="cell">FECHA</div>
+            <div class="cell">USUARIO</div>
+          </div>
+  
+          <div
+            class="row"
+
+            *ngFor="let incidencia of filtroExpediente"
+            (click)="goToIncidencia(incidencia)"
+            (contextmenu)="open($event, expediente); $event.preventDefault()"
+          >
+            <div class="cell" data-title="nombre">
+              {{ incidencia.incidencias[0].titulo }}
+            </div>
+            <div class="cell" data-title="folio">
+              {{  incidencia.folio }}
+            </div>
+            <div class="cell" data-title="tipo">
+              {{  incidencia.incidencias[0].tipoIncidencia.name }}
+            </div>
+            <div class="cell" data-title="fecha">
+              {{ incidencia.dateCreacion }}
+            </div>
+            <div class="cell" data-title="fecha">
+                {{ incidencia.user }}
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #userMenu let-expedientes>
+    <section class="user-menu">
+      <div (click)="goToIncidencia(expedientes)">ver incidencia</div>
+    </section>
+  </ng-template>
+  
+  <ngx-spinner
+  bdColor="rgba(161,32,32,0.8)"
+  size="medium"
+  color="#fff"
+  type="square-jelly-box"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
