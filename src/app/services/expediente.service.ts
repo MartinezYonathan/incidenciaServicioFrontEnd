@@ -49,5 +49,8 @@ export class ExpedienteService {
 
     return this.http.get(this.API_URL + 'evidencia/files/' + id, { headers, responseType: 'blob' as 'json'});
   }
-
+  
+  getAllExpedientesByROOT(): Observable<any> {
+    return this.http.get(`${this.API_URL}expediente/root/all`);
+  }
 }
