@@ -7,6 +7,7 @@ import Swal from 'sweetalert2'
 import { Action } from 'rxjs/internal/scheduler/Action';
 import { ExpedienteService } from 'src/app/services/expediente.service';
 import { Expediente } from 'src/app/model/expediente-model';
+import { Administradores } from 'src/app/model/administradores-model';
 
 @Component({
   selector: 'app-asignacion',
@@ -22,6 +23,7 @@ export class AsignacionComponent implements OnInit {
     private expedienteService: ExpedienteService
   ) {}
   expedientes: Expediente[] = [];
+  administradores: Administradores[] = [];
   username: string;
   totalDeOperaciones = this.expedientes.length;
   filtroExpediente: Expediente[] = [];
@@ -36,12 +38,21 @@ export class AsignacionComponent implements OnInit {
     this.expedienteService.getAllExpedientesByROOT().subscribe(data => {
       this.expedientes = data;
       this.filtro();
-      console.log(this.filtroExpediente);
+    });
+
+    this.adminService.getAllAdmin().subscribe(data => {
+      this.administradores = data;
+  
+      for (let i = 0; i < data.length; i++) {
+        this.admin[data[i].nombreCompleto] = data[i].nombreCompleto;
+      }
+
     });
   }
 
   async goToIncidencia(incidencia: Incidencia) {
-    this.admin = {"juan":"juan manuel", pepe:"pepe perez", toño:"toño lopez", erik:"erik martinez"};
+
+    //this.admin = {"juan":"juan manuel", pepe:"pepe perez", toño:"toño lopez", erik:"erik martinez"};
     const { value: admin } = await Swal.fire({
       title: 'selecciona un administrador',
       input: 'select',
@@ -56,10 +67,14 @@ export class AsignacionComponent implements OnInit {
     })
     
     if (admin) {
-      Swal.fire(`El administrador fue asignado a la incidencias ${incidencia.id}`)
+      this.asignarIncidenciaAdmin(incidencia.id, admin);
+      Swal.fire(`Administrador(a) ${admin} fue asignado a la incidencia!!`)
     }
   }
 
+  asignarIncidenciaAdmin(id,username){
+
+  }
 
   numPages() {
     if (this.expedientes != null && this.expedientes != undefined) {

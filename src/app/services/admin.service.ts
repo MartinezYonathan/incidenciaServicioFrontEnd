@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment.prod';
 import { Incidencia } from 'src/app/model/incidencia-model';
+import { Administradores } from 'src/app/model/administradores-model';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -19,5 +20,9 @@ export class AdminService {
 
   getAllIncidenciasAdmin(): Observable<Array<Incidencia>> {
     return this.http.get<Array<Incidencia>>(this.API_URL + 'incidencia/admin/incidencias');
+  }
+
+  getAllAdmin(): Observable<Array<Administradores>> {
+    return this.http.get<Array<Administradores>>(this.API_URL + 'usuario/root/getUserAdmin');
   }
 }
