@@ -50,7 +50,7 @@ export class AsignacionComponent implements OnInit {
     });
   }
 
-  async goToIncidencia(incidencia: Incidencia) {
+  async goToIncidencia(expediente: Expediente) {
 
     //this.admin = {"juan":"juan manuel", pepe:"pepe perez", toño:"toño lopez", erik:"erik martinez"};
     const { value: admin } = await Swal.fire({
@@ -67,13 +67,11 @@ export class AsignacionComponent implements OnInit {
     })
     
     if (admin) {
-      this.asignarIncidenciaAdmin(incidencia.id, admin);
-      Swal.fire(`Administrador(a) ${admin} fue asignado a la incidencia!!`)
+
+      this.expedienteService.asignacionAdminROOT(expediente.id, admin).subscribe(data => {
+        Swal.fire(`Administrador(a) ${admin} fue asignado al expediente ${expediente.folio}`)
+      });
     }
-  }
-
-  asignarIncidenciaAdmin(id,username){
-
   }
 
   numPages() {

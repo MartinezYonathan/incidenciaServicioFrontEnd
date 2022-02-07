@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment.prod';
 
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'responseType'  : 'arraybuffer' as 'json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 
 @Injectable({
@@ -52,5 +52,12 @@ export class ExpedienteService {
   
   getAllExpedientesByROOT(): Observable<any> {
     return this.http.get(`${this.API_URL}expediente/root/all`);
+  }
+
+  asignacionAdminROOT(id : number,username: String): Observable<any> {
+    return this.http.post(`${this.API_URL}usuario/root/asignar/admin`,{
+      id: id,
+      username: username
+    },httpOptions);
   }
 }
