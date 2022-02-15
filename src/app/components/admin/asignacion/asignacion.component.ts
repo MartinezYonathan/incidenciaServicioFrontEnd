@@ -85,10 +85,10 @@ export class AsignacionComponent implements OnInit {
     })
     
     if (admin) {
-
       this.expedienteService.asignacionAdminROOT(expediente.id, admin).subscribe(data => {
         Swal.fire(`Administrador(a) ${admin} fue asignado al expediente ${expediente.folio}`)
       });
+      window.location.reload();
     }
   }
 

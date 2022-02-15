@@ -15,7 +15,7 @@ export class EstadisticasComponent implements OnInit {
     this.publicService.getUbicacionIncidencias().subscribe(data => {
       this.ubicaciones = data;
       this.ubicacionesLength = data.length;
-      console.log(this.ubicaciones);
+      
     });
   }
 }

@@ -27,7 +27,6 @@ export class NewComponent implements OnInit {
     
     this.authService.newpass(this.form).subscribe(
       data => {
-        console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
       },

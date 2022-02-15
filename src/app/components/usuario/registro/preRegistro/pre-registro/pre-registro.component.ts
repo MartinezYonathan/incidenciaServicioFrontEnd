@@ -25,7 +25,6 @@ export class PreRegistroComponent implements OnInit {
     
     this.authService.register(this.form).subscribe(
       data => {
-        console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
       },

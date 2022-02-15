@@ -30,7 +30,6 @@ export class ResetComponent implements OnInit {
   onSubmit(): void {
     this.authService.ressetpass(this.form).subscribe(
       data => {
-        console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
       },

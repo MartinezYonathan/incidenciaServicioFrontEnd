@@ -2,7 +2,7 @@ import { HttpClient, HttpEvent, HttpHeaders, HttpRequest } from '@angular/common
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Expediente } from 'src/app/model/expediente-model';
-import { environment } from '../../environments/environment.prod';
+import { environment } from 'src/environments/environment.prod';
 
 
 const httpOptions = {

@@ -60,13 +60,12 @@ export class IncidenciCompletaComponent implements OnInit {
             this.getCometariosByIncidencia();
             this.form.text = ' ';
             Swal.fire({
-              position: 'top-end',
               icon: 'success',
               title: 'comentario agregado.',
               showConfirmButton: false,
               timer: 1500,
               backdrop: `
-              rgba(0,0,123,0.4)
+              rgba(161,32,32,0.8)
               left top
               no-repeat
             `,

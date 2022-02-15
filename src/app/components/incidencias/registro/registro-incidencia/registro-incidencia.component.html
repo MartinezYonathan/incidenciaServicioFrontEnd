@@ -1,7 +1,6 @@
 <br />
 <br />
 <br />
-
 <div>
     <div class="contenedor">
         <div class="contenido-login" *ngIf="!isSuccessful">
@@ -14,8 +13,7 @@
                             <i class="fas fa-font"></i>
                         </div>
                         <div class="div">
-                            <input type="text" class="form-control" name="titulo" [(ngModel)]="form.titulo" required
-                                #titulo="ngModel" class="input" placeholder="titulo" />
+                            <input type="text" class="form-control" name="titulo" [(ngModel)]="form.titulo" required #titulo="ngModel" class="input" placeholder="titulo" />
                         </div>
                     </div>
                     <div class="alert alert-danger" role="alert" *ngIf="f.submitted && titulo.invalid">
@@ -27,8 +25,7 @@
                         <div class="i">
                             <i class="fas fa-audio-description"></i>
                         </div>
-                        <textarea class="form-control" name="descripcion" [(ngModel)]="form.descripcion" required
-                            #descripcion="ngModel" placeholder="descripcion" rows="4" cols="100"></textarea>
+                        <textarea class="form-control" name="descripcion" [(ngModel)]="form.descripcion" required #descripcion="ngModel" placeholder="descripcion" rows="4" cols="100"></textarea>
 
                     </div>
                     <div class="alert alert-danger" role="alert" *ngIf="f.submitted && descripcion.invalid">
@@ -40,9 +37,8 @@
                         <div class="i">
                             <i class="far fa-hand-pointer"></i>
                         </div>
-                        
-                            <select  class="form-control" name="nivelRiesgo" [(ngModel)]="form.nivelRiesgo" required
-                            #nivelRiesgo="ngModel" placeholder="Nivel de Riesgo" rows="4" cols="100">
+
+                        <select class="form-control" name="nivelRiesgo" [(ngModel)]="form.nivelRiesgo" required #nivelRiesgo="ngModel" placeholder="Nivel de Riesgo" rows="4" cols="100">
                                 <option value="BAJO">Nivel de riesgo Bajo</option>
                                 <option value="MEDIANO">Nivel de riesgo Mediano</option>
                                 <option value="ALTO">Nivel de riesgo Alto</option>
@@ -59,9 +55,7 @@
                             <i class="far fa-calendar-minus"></i>
                         </div>
                         <div class="div">
-                            <input type="datetime-local" class="form-control" name="dateInicio"
-                                [(ngModel)]="form.dateInicio" required #dateInicio="ngModel" class="input"
-                                placeholder="descripcion" required>
+                            <input type="datetime-local" class="form-control" name="dateInicio" [(ngModel)]="form.dateInicio" required #dateInicio="ngModel" class="input" placeholder="descripcion" required>
                         </div>
                     </div>
                     <div class="alert alert-danger" role="alert" *ngIf="f.submitted && dateInicio.invalid">
@@ -75,9 +69,7 @@
                             <i class="far fa-calendar-minus"></i>
                         </div>
                         <div class="div">
-                            <input type="datetime-local" class="form-control" name="dateTermino"
-                                [(ngModel)]="form.dateTermino" required #dateTermino="ngModel" class="input"
-                                placeholder="descripcion" required>
+                            <input type="datetime-local" class="form-control" name="dateTermino" [(ngModel)]="form.dateTermino" required #dateTermino="ngModel" class="input" placeholder="descripcion" required>
                         </div>
                     </div>
                     <div class="alert alert-danger" role="alert" *ngIf="f.submitted && dateTermino.invalid">
@@ -86,8 +78,7 @@
                 </div>
                 <div>
                     <h5>Lugar de incidencia. </h5>
-                    <app-map lat="19.312155871512488" lon="-99.05758380889891" zoom="17" width="100%" height="500px"
-                        addMarker="true">
+                    <app-map lat="19.312155871512488" lon="-99.05758380889891" zoom="17" width="100%" height="500px" addMarker="true">
                         <app-opciones control="FullScreen"></app-opciones>
                         <app-opciones control="ScaleLine"></app-opciones>
                         <app-opciones control="Zoom"></app-opciones>
