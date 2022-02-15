@@ -8,7 +8,7 @@
         <div class="col-md-9">
             <div class="">
                 <br />
-                <a href="profile" (click)="expediente()" class="btn-flotante">EXPEDIENTES</a
+                <a href="admin/expedientes" class="btn-flotante">EXPEDIENTES</a
         >
       </div>
       <div class="row post">
@@ -16,9 +16,9 @@
         <div class="col-md-11">
           <div class="heading text-center mx-auto">
             <h3 class="head">Expediente incidencia.</h3>
-            <p class="my-3 head">Folio: {{ expedientes.folio }}</p>
-            <p class="my-3 head">Estatus: {{ expedientes.status }}</p>
-            <p class="my-3 head">Administrador: {{ expedientes.administrador }}</p>
+            <p class="my-3 head">folio: {{ expediente.folio }}</p>
+            <p class="my-3 head">Estatus: {{ expediente.status }}</p>
+            <p class="my-3 head">Usuario: {{ expediente.user }}</p>
           </div>
           <div class="heading text-center mx-auto">
             <section class="section mt-5">
@@ -66,7 +66,33 @@
 </div>
 </div>
 <div class="col-md-3">
-    <app-evidencia></app-evidencia>
+    <div class="sidebar">
+        <img src="assets/img/evidencias.svg">
+        <div style="color: rgb(75, 75, 75); text-align: center; font-size: 1em; font-weight: bold">
+            Evidencia.
+        </div>
+
+        <div style="text-align: center">
+            <button class="btnCreateSubreddit" (click)="goToCreateEvidencia()">
+            Agregar evidencia
+        </button>
+            <button class="btnCreateSubreddit" (click)="goToViewEvidencia()">
+            Ver evidencia
+        </button>
+
+        </div>
+    </div>
+    <div class="sidebarEstatus">
+        <div style="color: rgb(75, 75, 75); text-align: center; font-size: 1em; font-weight: bold">
+            Estatus.
+        </div>
+
+        <div style="text-align: center">
+            <button class="btnCreateSubreddit" (click)="goToCambioEstatus()">
+        Cambio de Estatus
+    </button>
+        </div>
+    </div>
     <app-seguimiento></app-seguimiento>
 </div>
 </div>

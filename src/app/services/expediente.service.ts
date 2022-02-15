@@ -60,4 +60,20 @@ export class ExpedienteService {
       username: username
     },httpOptions);
   }
+
+  getExpedientesAsignadasADMIN(): Observable<any> {
+    return this.http.get(`${this.API_URL}expediente/admin/asignadas`);
+  }
+
+  getExpedienteById(id: number): Observable<any> {
+    return this.http.get(`${this.API_URL}expediente/` + id,);
+  }
+
+  cambioEstatusADMIN(id : number,estatus: String): Observable<any> {
+    return this.http.post(`${this.API_URL}expediente/`,{
+      id: id,
+      estatus: estatus
+    },httpOptions);
+  }
+
 }

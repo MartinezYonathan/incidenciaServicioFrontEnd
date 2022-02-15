@@ -56,6 +56,7 @@ import { SeguimientoComponent } from './components/incidencias/seguimiento/segui
 import { AgregarEvidenciasComponent } from './components/incidencias/expediente/agregar-evidencias/agregar-evidencias.component';
 import { VerEvidenciasComponent } from './components/incidencias/expediente/ver-evidencias/ver-evidencias.component';
 import { PaginationComponent } from './components/pagination/pagination/pagination.component';
+import { ExpedienteAdminAsignadoComponent } from './components/admin/expediente-admin-asignado/expediente-admin-asignado.component';
 
 //contacto
 import { ContactoComponent } from './components/incidencias/contacto/contacto.component';
@@ -63,6 +64,8 @@ import { VerContactoComponent } from './components/incidencias/contacto/ver-cont
 
 //Root
 import { AsignacionComponent } from './components/admin/asignacion/asignacion.component';
+import { VerExpedienteComponent } from './components/admin/ver-expediente/ver-expediente.component';
+import { VerEvidenciasAdminComponent } from './components/admin/ver-evidencias-admin/ver-evidencias-admin.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +101,10 @@ import { AsignacionComponent } from './components/admin/asignacion/asignacion.co
     PaginationComponent,
     ContactoComponent,
     VerContactoComponent,
-    AsignacionComponent
+    AsignacionComponent,
+    ExpedienteAdminAsignadoComponent,
+    VerExpedienteComponent,
+    VerEvidenciasAdminComponent
   ],
   imports: [
     OverlayModule,

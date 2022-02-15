@@ -29,11 +29,14 @@ import { IncidenciaExpedienteComponent } from './components/incidencias/expedien
 //expediente
 import { AgregarEvidenciasComponent } from './components/incidencias/expediente/agregar-evidencias/agregar-evidencias.component';
 import { VerEvidenciasComponent } from './components/incidencias/expediente/ver-evidencias/ver-evidencias.component';
+import { ExpedienteAdminAsignadoComponent } from './components/admin/expediente-admin-asignado/expediente-admin-asignado.component';
 
 //contacto
 import { ContactoComponent } from './components/incidencias/contacto/contacto.component';
 import { VerContactoComponent } from './components/incidencias/contacto/ver-contacto/ver-contacto.component';
 import { AsignacionComponent } from './components/admin/asignacion/asignacion.component';
+import { VerExpedienteComponent } from './components/admin/ver-expediente/ver-expediente.component';
+import { VerEvidenciasAdminComponent } from './components/admin/ver-evidencias-admin/ver-evidencias-admin.component';
 
 
 const routes: Routes = [
@@ -49,7 +52,10 @@ const routes: Routes = [
   { path: 'newpass', component: NewComponent },
   { path: 'login/reset', component: ResetComponent },
   { path: 'incidencias', component: IncidenciasComponent },
+  { path: 'admin/expedientes', component: ExpedienteAdminAsignadoComponent },
   { path: 'incidenciasexpediente', component: IncidenciaExpedienteComponent },
+  { path: 'verExpediente', component: VerExpedienteComponent },
+  { path: 'verEvidenciasExpediente', component: VerEvidenciasAdminComponent },
   { path: 'incidencia', component: IncidenciCompletaPublicaComponent },
   { path: 'miincidencia', component: IncidenciCompletaComponent },
   { path: 'estadisticas', component: EstadisticasComponent },

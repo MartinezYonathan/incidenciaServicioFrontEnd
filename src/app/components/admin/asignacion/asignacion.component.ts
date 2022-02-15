@@ -20,7 +20,8 @@ export class AsignacionComponent implements OnInit {
     private router: Router,
     private tokenService: TokenStorageService,
     private adminService: AdminService,
-    private expedienteService: ExpedienteService
+    private expedienteService: ExpedienteService,
+    private tokenStorageService: TokenStorageService 
   ) {}
   expedientes: Expediente[] = [];
   administradores: Administradores[] = [];
@@ -31,23 +32,40 @@ export class AsignacionComponent implements OnInit {
   numPerPage = 10;
   maxSize = 5;
   admin = {};
+  roles: string[];
+  isLoggedIn = false;
 
   ngOnInit(): void {
-    this.username = this.tokenService.getUser();
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
 
-    this.expedienteService.getAllExpedientesByROOT().subscribe(data => {
-      this.expedientes = data;
-      this.filtro();
-    });
+    if (this.isLoggedIn) {
+      const rolesToken = this.tokenStorageService.getRoles();
+      this.roles = rolesToken;
+        if (this.roles.includes('ROLE_ADMIN')) {
+            
+            this.username = this.tokenService.getUser();
 
-    this.adminService.getAllAdmin().subscribe(data => {
-      this.administradores = data;
-  
-      for (let i = 0; i < data.length; i++) {
-        this.admin[data[i].nombreCompleto] = data[i].nombreCompleto;
-      }
+            this.expedienteService.getAllExpedientesByROOT().subscribe(data => {
+              this.expedientes = data;
+              this.filtro();
+            });
 
-    });
+            this.adminService.getAllAdmin().subscribe(data => {
+              this.administradores = data;
+          
+              for (let i = 0; i < data.length; i++) {
+                this.admin[data[i].nombreCompleto] = data[i].nombreCompleto;
+              }
+
+            });
+
+        }else{
+          this.router.navigateByUrl('home');
+        }
+    }else{
+      this.router.navigateByUrl('/login');
+    }
+
   }
 
   async goToIncidencia(expediente: Expediente) {

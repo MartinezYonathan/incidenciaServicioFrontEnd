@@ -39,6 +39,7 @@ export class RegistroIncidenciaComponent implements OnInit {
       showCancelButton: true,
       confirmButtonText: `SI`,
       denyButtonText: `NO`,
+      allowOutsideClick: false,
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {

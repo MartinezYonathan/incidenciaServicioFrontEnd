@@ -1,39 +1,46 @@
-<div>
-    <br /> Has agregado <b>{{ expedientes.length }}</b> incidencia (s) y Puedes consultar tu historial de incidencias.
+<br />
+<br />
+<br />
+<br />
+
+<div class="heading text-center mx-auto">
+    <br />
+    <h1 class="head">Incidencias Asignadas.</h1>
+    <p class="my-3 head"></p>
 </div>
 <hr />
-<div>
-    <h3 class="title-5 m-b-35">Tus expedientes de incidencias:</h3>
-</div>
 <div class="limiter">
+
     <div class="container-table100">
         <div class="wrap-table100">
             <div class="table">
                 <div class="row header">
                     <div class="cell">INCIDENCIA</div>
                     <div class="cell">FOLIO</div>
-                    <div class="cell">ADMIN</div>
+                    <div class="cell">TIPO</div>
                     <div class="cell">FECHA</div>
+                    <div class="cell">USUARIO</div>
                     <div class="cell">ESTATUS</div>
                 </div>
 
-                <div class="row" *ngFor="let expediente of expedientes" (click)="goToIncidencia(expediente)" (contextmenu)="open($event, expediente); $event.preventDefault()">
+                <div class="row" *ngFor="let expediente of expedientes" (click)="goToIncidencia(expediente)">
                     <div class="cell" data-title="nombre">
-                        {{ expediente.nomIncidencia }}
+                        {{ expediente.incidencias[0].titulo }}
                     </div>
                     <div class="cell" data-title="folio">
                         {{ expediente.folio }}
                     </div>
-                    <div class="cell" data-title="admin">
-                        {{ expediente.administrador }}
+                    <div class="cell" data-title="nombre">
+                        {{ expediente.incidencias[0].tipoIncidencia.name }}
                     </div>
                     <div class="cell" data-title="fecha">
                         {{ expediente.dateCreacion }}
                     </div>
+                    <div class="cell" data-title="user">
+                        {{ expediente.user }}
+                    </div>
                     <div class="cell" data-title="status">
-                        <span class="status--{{ expediente.status }}">{{
-              expediente.status
-            }}</span>
+                        <span class="status--{{ expediente.status }}">{{ expediente.status }}</span>
                     </div>
                 </div>
             </div>
@@ -46,3 +53,7 @@
         <div (click)="goToIncidencia(expedientes)">ver incidencia</div>
     </section>
 </ng-template>
+
+<ngx-spinner bdColor="rgba(161,32,32,0.8)" size="medium" color="#fff" type="square-jelly-box">
+    <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>

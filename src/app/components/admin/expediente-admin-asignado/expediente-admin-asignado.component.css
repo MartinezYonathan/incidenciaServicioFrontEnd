@@ -122,11 +122,11 @@
 
 
 /*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
+  [ FONT ]*/
 
 
 /*//////////////////////////////////////////////////////////////////
-  [ RESTYLE TAG ]*/
+    [ RESTYLE TAG ]*/
 
 * {
     margin: 0px;
@@ -219,7 +219,7 @@ iframe {
 
 
 /*//////////////////////////////////////////////////////////////////
-  [ Table ]*/
+    [ Table ]*/
 
 .limiter {
     width: 100%;
@@ -384,43 +384,43 @@ iframe {
 
 
 /*------------------------------------------------------------------
-[Master Stylesheet]
-
-Project:  CoolAdmin
-Version:	1.0
-Last change:	08/10/2018 [Add Define a table of contents Link]
-Assigned to:	Hau Nguyen
-Primary use:	Open Source
--------------------------------------------------------------------*/
-
-
-/*------------------------------------------------------------------
-[LAYOUT]
-
-* body
-    + Header / header
-	+ Page Content / .page-content .name-page
-        + Section Layouts / section .name-section
-        ...
-	+ Footer / footer
-
--------------------------------------------------------------------*/
+  [Master Stylesheet]
+  
+  Project:  CoolAdmin
+  Version:	1.0
+  Last change:	08/10/2018 [Add Define a table of contents Link]
+  Assigned to:	Hau Nguyen
+  Primary use:	Open Source
+  -------------------------------------------------------------------*/
 
 
 /*------------------------------------------------------------------
-# [Color codes]
-
-# Text Color (text): #666666
-# Text Color Deep (Text, title): #333333
-
-------------------------------------------------------------------*/
+  [LAYOUT]
+  
+  * body
+      + Header / header
+      + Page Content / .page-content .name-page
+          + Section Layouts / section .name-section
+          ...
+      + Footer / footer
+  
+  -------------------------------------------------------------------*/
 
 
 /*------------------------------------------------------------------
-[Typography]
+  # [Color codes]
+  
+  # Text Color (text): #666666
+  # Text Color Deep (Text, title): #333333
+  
+  ------------------------------------------------------------------*/
 
-Notes:	decreasing heading by 0.4em with every subsequent heading level
--------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Typography]
+  
+  Notes:	decreasing heading by 0.4em with every subsequent heading level
+  -------------------------------------------------------------------*/
 
 
 /*-----------------------------------------------------*/
@@ -5127,10 +5127,6 @@ section {
 
 .status--REGISTRADA {
     color: #fa4251;
-}
-
-.status--ASIGNADA {
-    color: #ff6600;
 }
 
 .table-data3 thead {
@@ -13708,4 +13704,16 @@ section {
 .vue-lists ul,
 .vue-lists ol {
     padding-left: 30px;
+}
+
+.status--process {
+    color: #00ad5f;
+}
+
+.status--REGISTRADA {
+    color: #fa4251;
+}
+
+.status--ASIGNADA {
+    color: #ff6600;
 }
