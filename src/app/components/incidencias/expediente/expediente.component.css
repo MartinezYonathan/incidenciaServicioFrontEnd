@@ -5121,16 +5121,24 @@ section {
     padding: 0 14px;
 }
 
-.status--process {
-    color: #00ad5f;
-}
-
 .status--REGISTRADA {
     color: #fa4251;
 }
 
 .status--ASIGNADA {
     color: #ff6600;
+}
+
+.status--REVISION {
+    color: #ffd000;
+}
+
+.status--EN_PROCESO {
+    color: #00ad5f;
+}
+
+.status--FINALIZADO {
+    color: #0084ff;
 }
 
 .table-data3 thead {
